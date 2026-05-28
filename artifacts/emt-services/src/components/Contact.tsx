@@ -22,6 +22,7 @@ const formSchema = z.object({
   eventDate: z.string().min(1, "Event date is required"),
   eventLocation: z.string().min(2, "Location is required"),
   servicesRequired: z.string().min(10, "Please provide more details about your requirements"),
+  website: z.string().max(0, ""),
 });
 
 type FormValues = z.infer<typeof formSchema>;
@@ -57,12 +58,14 @@ export default function Contact() {
       eventDate: "",
       eventLocation: "",
       servicesRequired: "",
+      website: "",
     },
   });
 
   function onSubmit(data: FormValues) {
     setServerError(null);
-    submitContact({ data });
+    const { website: _honeypot, ...payload } = data;
+    submitContact({ data: payload });
   }
 
   return (
@@ -88,7 +91,7 @@ export default function Contact() {
                   <a href="mailto:info@emtservices.uk" className="text-xl font-semibold text-white hover:underline">
                     info@emtservices.uk
                   </a>
-                  <p className="text-white/70 mt-2">We respond to all enquiries within one working day.</p>
+                  <p className="text-white/70 mt-2">We aim to respond to all enquiries within one working day.</p>
                 </div>
               </div>
             </div>
@@ -107,6 +110,22 @@ export default function Contact() {
             ) : (
               <Form {...form}>
                 <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+                  {/* Honeypot — hidden from real users, bots fill it in */}
+                  <div style={{ display: "none" }} aria-hidden="true">
+                    <FormField
+                      control={form.control}
+                      name="website"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel>Website</FormLabel>
+                          <FormControl>
+                            <Input tabIndex={-1} autoComplete="off" {...field} />
+                          </FormControl>
+                        </FormItem>
+                      )}
+                    />
+                  </div>
+
                   <FormField
                     control={form.control}
                     name="fullName"
@@ -169,7 +188,7 @@ export default function Contact() {
                         <FormLabel>Services Required</FormLabel>
                         <FormControl>
                           <Textarea
-                            placeholder="Describe your event and required cover (security, medical, stewarding, etc.)"
+                            placeholder="Describe your event and required cover (security, medical, stewarding, fire safety, etc.)"
                             className="min-h-[120px] resize-y"
                             {...field}
                           />
@@ -192,7 +211,7 @@ export default function Contact() {
                     className="w-full font-semibold text-lg"
                     disabled={isPending}
                   >
-                    {isPending ? "Sending…" : "speed button"}
+                    {isPending ? "Sending…" : "Request Cover"}
                   </Button>
                 </form>
               </Form>

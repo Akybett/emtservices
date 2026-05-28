@@ -1,25 +1,26 @@
 import { motion } from "framer-motion";
 import { ShieldCheck, HeartPulse, Users, Flame } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+
 const services = [
   {
     title: "SIA-Licensed Security",
-    description: "SIA-licensed personnel placed and supervised by directors who have managed event security on the ground for over three decades. No layers of management between you and the people responsible.",
+    description: "Our SIA-licensed security personnel are experienced professionals — not individuals fresh to the industry or simply 'badge holders'. Our team is built through personal recommendations and direct approaches from trusted colleagues. Every operative is personally vetted by the directors, with references actively followed up before anyone is placed on an event.",
     icon: ShieldCheck,
   },
   {
-    title: "Medical & Clinical Cover",
-    description: "Practical medical planning built on real operational experience. For larger or more complex events, we work alongside trusted CQC-registered providers rather than overstate our own clinical capacity.",
+    title: "Medical & First Aid Cover",
+    description: "We provide on-site medical planning and first aid cover. We are not CQC-registered and do not offer patient conveyance. For events requiring clinical or ambulance provision, we work closely alongside trusted CQC-registered providers to ensure the right level of care is in place. We will never overstate our own clinical capacity.",
     icon: HeartPulse,
   },
   {
     title: "Professional Stewarding",
-    description: "Crowd management, traffic direction, and customer-facing duties carried out by operatives we have personally vetted. We do not simply fill positions — we take responsibility for the people we place.",
+    description: "We bring in specialist stewards for each event rather than maintaining a permanent roster. This keeps us flexible and ensures the right personnel are matched to the right event. Our stewards come to us through personal recommendation and are vetted directly — not sourced from an agency pool.",
     icon: Users,
   },
   {
     title: "Fire Safety Operations",
-    description: "Fire safety planning and on-site compliance for events of all sizes, delivered in accordance with current legislation and the guidance frameworks we have followed throughout our career.",
+    description: "Fire safety planning and on-site compliance, structured in accordance with current legislation and industry guidance. Our directors hold NEBOSH qualifications — a gold-standard credential in occupational health, safety, and risk management — and apply that expertise to every event we cover.",
     icon: Flame,
   }
 ];
@@ -49,7 +50,7 @@ export default function Services() {
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Core Services</h2>
           <div className="w-20 h-1 bg-primary mx-auto mb-6"></div>
           <p className="text-muted-foreground text-lg">
-            We are a small operation. What we offer is direct access to experienced, accountable professionals — not a large agency placing unfamiliar staff.
+            We are a small, flexible operation. Rather than holding a large permanent roster, we bring in vetted specialists to suit each event. What you always get is direct access to the directors and full accountability for the team we provide.
           </p>
         </div>
 
@@ -77,6 +78,19 @@ export default function Services() {
               </Card>
             </motion.div>
           ))}
+        </motion.div>
+
+        {/* Staffing capacity note */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="mt-12 p-6 rounded-xl border border-border bg-muted/30 max-w-3xl mx-auto text-center"
+        >
+          <p className="text-muted-foreground leading-relaxed">
+            <span className="font-semibold text-foreground">Staffing capacity:</span> We can supply anywhere from a core team of two up to approximately thirty personnel for an event. This is always subject to our other commitments and the availability of our vetted team at the time — something we will always be upfront about when you enquire.
+          </p>
         </motion.div>
       </div>
     </section>

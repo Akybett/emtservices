@@ -9,4 +9,6 @@
 export * from './contactRequest';
 export * from './contactResponse';
 export * from './errorResponse';
+export * from './googleReview';
 export * from './healthStatus';
+export * from './reviewsResponse';

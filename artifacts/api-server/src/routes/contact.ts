@@ -31,6 +31,13 @@ function createTransport() {
 }
 
 router.post("/contact", async (req, res) => {
+  // Honeypot: bots fill this hidden field, humans don't
+  if (req.body?.website) {
+    req.log.warn("Honeypot triggered — likely spam submission");
+    res.json({ success: true, message: "Enquiry received." });
+    return;
+  }
+
   const parsed = ContactSchema.safeParse(req.body);
 
   if (!parsed.success) {

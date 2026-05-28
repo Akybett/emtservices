@@ -43,3 +43,19 @@ export const SubmitContactResponse = zod.object({
 })
 
 
+/**
+ * Returns cached reviews from the Google Places API
+ * @summary Get Google Reviews
+ */
+export const GetReviewsResponse = zod.object({
+  "reviews": zod.array(zod.object({
+  "authorName": zod.string(),
+  "rating": zod.number(),
+  "text": zod.string().optional(),
+  "relativePublishTimeDescription": zod.string().optional()
+})),
+  "rating": zod.number().optional(),
+  "userRatingCount": zod.number().optional()
+})
+
+

@@ -29,3 +29,16 @@ export interface ErrorResponse {
   error: string;
 }
 
+export interface GoogleReview {
+  authorName: string;
+  rating: number;
+  text?: string;
+  relativePublishTimeDescription?: string;
+}
+
+export interface ReviewsResponse {
+  reviews: GoogleReview[];
+  rating?: number;
+  userRatingCount?: number;
+}
+

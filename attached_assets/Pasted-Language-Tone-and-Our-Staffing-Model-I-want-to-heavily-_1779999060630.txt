@@ -1,0 +1,13 @@
+Language, Tone and Our Staffing Model: I want to heavily emphasise the overall language of the site. It is absolutely vital that we do not come across as arrogant. We need to be transparent about how we operate without making grand, boastful claims. Please ensure the copy reflects our actual operational model: we hire in specialist staff to fulfil duties for our events rather than maintaining a huge roster of staff on a permanent payroll. This allows us to be highly flexible, picking and choosing exactly the right personnel for each specific event. The wording should frame this as a major benefit to the client, highlighting our adaptability and bespoke service, whilst remaining completely grounded.
+
+Button Terminology: We need to remove the "speed button" label. Please replace it with more accurate, industry-standard terminology that clearly directs the client. Something like "Request Cover", "Enquire Now", or "Contact the Team" would be far more appropriate.
+
+Wording Adjustments: I would like to completely remove the word "deployment" from the copy. It can sound a bit too heavy. Instead, let's shift the focus toward community engagement—perhaps pointing them to "follow us on socials" or similar phrasing, depending on where it sits on the page.
+
+Live Google Reviews: Trust is everything in our line of work. To that end, please set up a dynamic feed to pull actual, live reviews directly from our Google Reviews profile. It is crucial that we display genuine client feedback rather than relying on any static, computer-generated text or placeholders.
+
+Driving Website Engagement & Branding: We need to actively encourage visitors to use and reference the website as a core resource. Please review the overall layout with the user journey in mind. Alongside this, take a critical look at our logo placement—it needs to stand out effectively and anchor the brand without overwhelming the page.
+
+Response Times & Expectations: Please update our stated contact response time to say we aim to respond "within one working day". Internally, we will always strive to reply as quickly as humanly possible, but this sets a realistic, professional expectation that we know we can consistently meet.
+
+Email Infrastructure (Google Workspace): For the contact forms and backend reference, please note that we operate our own email setup through Google Workspace. Ensure all web forms, auto-responders, and routing are configured to integrate seamlessly and securely with Google's infrastructure.

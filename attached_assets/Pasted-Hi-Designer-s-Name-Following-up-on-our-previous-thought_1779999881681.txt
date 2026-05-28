@@ -1,0 +1,39 @@
+Hi [Designer's Name],
+
+Following up on our previous thoughts, Alan and I have had a closer look at the site and have a more detailed breakdown of the updates we need. As you know, we operate in a highly competitive space—both locally and nationally—so our digital presence needs to strike the exact right balance. We must come across as professional and highly capable, but also entirely approachable and humble.
+
+Could you please action the following adjustments?
+
+"Events We Have Covered" Portfolio: Looking at the grid of events we have covered, starting from the top left, please change the text label from "concert" to "Camper Marmalade". Furthermore, for the sixth and final image in that section, please change the label from "Indoor Event" to "Indoor Rave".
+
+Site Imagery and Backgrounds: We are mindful that the site currently feels a bit light on imagery. We want to strictly avoid duplicating the same pictures across different pages, so we had a thought: could we perhaps take one of the event images and use it as a highly opaque, faded background graphic? It might add some visual texture without cluttering the page. We are very open to your professional suggestions on how best to handle the imagery while keeping the design clean and effective.
+
+Language, Tone and Our Staffing Model: We want to heavily emphasise the overall language of the site. It is absolutely vital that we do not come across as arrogant. We need to be transparent about how we operate without making grand, boastful claims. Please ensure the copy reflects our actual operational model: we hire in specialist staff to fulfil duties for our events rather than maintaining a huge roster of staff on a permanent payroll. This allows us to be highly flexible, picking and choosing exactly the right personnel for each specific event. The wording should frame this as a major benefit to the client, highlighting our adaptability and bespoke service, whilst remaining completely grounded.
+
+Managing Staffing Expectations: Leading on from the above, please ensure we set clear and realistic expectations regarding the size of the teams we can provide. We can supply anywhere from a core team of two up to around thirty personnel for an event. However, please ensure it is clearly stated that this is always subject to our other commitments and staff availability. This reinforces our honest, transparent approach and ensures we never overpromise.
+
+Team Experience and Maturity: We want to subtly convey that the vast majority of our team consists of mature, experienced professionals (most being over the age of 30). However, for obvious legal and equal-opportunity reasons, we must be incredibly careful how this is worded. Please ensure the copy highlights our team's "wealth of life experience", "maturity", and "seasoned professional background" without explicitly stating an age limit or making it sound exclusionary.
+
+Pricing and Fair Pay: We need to make our stance on pricing clear in the copy. We are not interested in a "race to the bottom" on price. We are committed to paying our staff exactly what they are worth, which means we will not be the cheapest option on the market, nor do we plan to be. However, our pricing will always be completely fair. Please ensure this ethos of fairness, valuing our staff, and providing a high-quality service comes across clearly.
+
+Clinical Scope (CQC & Conveyance): It is incredibly important that we are transparent about our clinical scope. Please explicitly state on the site that we are not CQC-registered and we do not offer patient conveyance. Instead, frame this positively by explaining that we work closely alongside trusted CQC-registered providers. We never want to overstate our own clinical capacity, so honesty here is key.
+
+Qualified at Director Level (NEBOSH): Please add a section or statement noting that we are "Qualified at Director Level," specifically highlighting our NEBOSH (National Examination Board in Occupational Safety and Health) qualifications. For your context, this is a gold-standard qualification in health, safety, and risk management. As equal partners running the business, we want to present this purely as a reassurance to clients that their event safety is being managed to the highest recognised professional standards, rather than sounding like we are showing off.
+
+Risk Assessments and Method Statements (RAMS): Please ensure the copy does not state that we "produce full Event Risk Assessments and Method Statements (RAMS) as standard — not as an add-on". We are not keen on phrasing it this way, as it sets the wrong expectation. Please remove or avoid any claims that RAMS are automatically included as a standard freebie.
+
+Button Terminology: We need to remove the "speed button" label. Please replace it with more accurate, industry-standard terminology that clearly directs the client. Something like "Request Cover", "Enquire Now", or "Contact the Team" would be far more appropriate.
+
+Wording Adjustments: We would like to completely remove the words "deployment" and "deploy" from the copy. It can sound a bit too heavy. Instead, let's shift the focus toward community engagement—perhaps pointing them to "follow us on socials" or similar phrasing, depending on where it sits on the page.
+
+Live Google Reviews: Trust is everything in our line of work. To that end, please set up a dynamic feed to pull actual, live reviews directly from our Google Reviews profile. It is crucial that we display genuine client feedback rather than relying on any static, computer-generated text or placeholders.
+
+Driving Website Engagement & Branding: We need to actively encourage visitors to use and reference the website as a core resource. Please review the overall layout with the user journey in mind. Alongside this, take a critical look at our logo placement—it needs to stand out effectively and anchor the brand without overwhelming the page.
+
+Response Times & Expectations: Please update our stated contact response time to say we aim to respond "within one working day". Internally, we will always strive to reply as quickly as humanly possible, but this sets a realistic, professional expectation that we know we can consistently meet.
+
+Contact Form & Email Infrastructure: For the contact forms, please ensure all submissions are routed to info@emtservices.uk. As long as they go to that address, we will receive them seamlessly through our Google Workspace setup, so please feel free to use this if it makes the integration easier. Additionally, please implement a CAPTCHA or a similar robust anti-spam measure on the form to help filter out junk emails.
+
+Please let me know if you need any clarification on these points, or if you have any design suggestions on how best to implement them.
+
+Many thanks,

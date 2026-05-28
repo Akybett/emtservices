@@ -23,7 +23,8 @@ import type {
   ContactRequest,
   ContactResponse,
   ErrorResponse,
-  HealthStatus
+  HealthStatus,
+  ReviewsResponse
 } from './api.schemas';
 
 import { customFetch } from '../custom-fetch';
@@ -187,4 +188,82 @@ export const useSubmitContact = <TError = ErrorType<ErrorResponse>,
       > => {
       return useMutation(getSubmitContactMutationOptions(options));
     }
+
+export const getGetReviewsUrl = () => {
+
+
+
+
+  return `/api/reviews`
+}
+
+/**
+ * Returns cached reviews from the Google Places API
+ * @summary Get Google Reviews
+ */
+export const getReviews = async ( options?: RequestInit): Promise<ReviewsResponse> => {
+
+  return customFetch<ReviewsResponse>(getGetReviewsUrl(),
+  {
+    ...options,
+    method: 'GET'
+
+
+  }
+);}
+
+
+
+
+
+export const getGetReviewsQueryKey = () => {
+    return [
+    `/api/reviews`
+    ] as const;
+    }
+
+
+export const getGetReviewsQueryOptions = <TData = Awaited<ReturnType<typeof getReviews>>, TError = ErrorType<unknown>>( options?: { query?:UseQueryOptions<Awaited<ReturnType<typeof getReviews>>, TError, TData>, request?: SecondParameter<typeof customFetch>}
+) => {
+
+const {query: queryOptions, request: requestOptions} = options ?? {};
+
+  const queryKey =  queryOptions?.queryKey ?? getGetReviewsQueryKey();
+
+
+
+    const queryFn: QueryFunction<Awaited<ReturnType<typeof getReviews>>> = ({ signal }) => getReviews({ signal, ...requestOptions });
+
+
+
+
+
+   return  { queryKey, queryFn, ...queryOptions} as UseQueryOptions<Awaited<ReturnType<typeof getReviews>>, TError, TData> & { queryKey: QueryKey }
+}
+
+export type GetReviewsQueryResult = NonNullable<Awaited<ReturnType<typeof getReviews>>>
+export type GetReviewsQueryError = ErrorType<unknown>
+
+
+/**
+ * @summary Get Google Reviews
+ */
+
+export function useGetReviews<TData = Awaited<ReturnType<typeof getReviews>>, TError = ErrorType<unknown>>(
+  options?: { query?:UseQueryOptions<Awaited<ReturnType<typeof getReviews>>, TError, TData>, request?: SecondParameter<typeof customFetch>}
+
+ ):  UseQueryResult<TData, TError> & { queryKey: QueryKey } {
+
+  const queryOptions = getGetReviewsQueryOptions(options)
+
+  const query = useQuery(queryOptions) as  UseQueryResult<TData, TError> & { queryKey: QueryKey };
+
+  return { ...query, queryKey: queryOptions.queryKey };
+}
+
+
+
+
+
+
 

@@ -12,6 +12,8 @@ tags:
     description: Health operations
   - name: contact
     description: Contact form
+  - name: reviews
+    description: Google Reviews
 paths:
   /healthz:
     get:
@@ -57,6 +59,19 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/ErrorResponse"
+  /reviews:
+    get:
+      operationId: getReviews
+      tags: [reviews]
+      summary: Get Google Reviews
+      description: Returns cached reviews from the Google Places API
+      responses:
+        "200":
+          description: Reviews
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ReviewsResponse"
 components:
   schemas:
     HealthStatus:
@@ -106,3 +121,30 @@ components:
           type: string
       required:
         - error
+    GoogleReview:
+      type: object
+      properties:
+        authorName:
+          type: string
+        rating:
+          type: number
+        text:
+          type: string
+        relativePublishTimeDescription:
+          type: string
+      required:
+        - authorName
+        - rating
+    ReviewsResponse:
+      type: object
+      properties:
+        reviews:
+          type: array
+          items:
+            $ref: "#/components/schemas/GoogleReview"
+        rating:
+          type: number
+        userRatingCount:
+          type: integer
+      required:
+        - reviews

@@ -7,9 +7,9 @@ export default function Hero() {
     <section id="home" className="relative min-h-[100dvh] flex items-center justify-center pt-20 overflow-hidden">
       {/* Background Image & Overlay */}
       <div className="absolute inset-0 z-0">
-        <img 
-          src={heroImg} 
-          alt="Professional event security staff at outdoor festival" 
+        <img
+          src={heroImg}
+          alt="Professional event safety staff at outdoor festival"
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-primary/80 mix-blend-multiply" />
@@ -24,8 +24,8 @@ export default function Hero() {
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white mb-6 leading-tight">
-              Event Safety Guaranteed.<br />
-              <span className="text-white/90">35 Years of Proven Expertise.</span>
+              Event Safety.<br />
+              <span className="text-white/90">35 Years of Hands-On Experience.</span>
             </h1>
           </motion.div>
 
@@ -35,7 +35,7 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
           >
             <p className="text-lg md:text-2xl text-white/80 mb-10 max-w-2xl mx-auto font-medium">
-              A small, owner-operated firm. We do not have a head office full of staff — just two directors with 35 years of hands-on experience who turn up, plan carefully, and take personal responsibility for every deployment.
+              A small, owner-operated firm. Two directors with over three decades of ground-level experience — honest about what we do, transparent about how we work, and personally invested in every event we cover.
             </p>
           </motion.div>
 
@@ -44,14 +44,14 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
           >
-            <Button 
-              size="lg" 
+            <Button
+              size="lg"
               className="bg-white text-primary hover:bg-white/90 text-lg px-8 py-6 font-semibold shadow-lg"
               onClick={() => {
                 document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" });
               }}
             >
-              speed button
+              Request Cover
             </Button>
           </motion.div>
         </div>

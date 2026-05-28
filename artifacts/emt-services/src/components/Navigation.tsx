@@ -77,7 +77,7 @@ export default function Navigation() {
                 </a>
               ))}
             </div>
-            <Button 
+            <Button
               className={cn(
                 "font-semibold",
                 !isScrolled && "bg-white text-primary hover:bg-white/90"
@@ -87,7 +87,7 @@ export default function Navigation() {
                 element?.scrollIntoView({ behavior: "smooth" });
               }}
             >
-              speed button
+              Request Cover
             </Button>
           </nav>
 
@@ -118,7 +118,7 @@ export default function Navigation() {
               {link.name}
             </a>
           ))}
-          <Button 
+          <Button
             className="w-full mt-4 font-semibold"
             onClick={() => {
               setMobileMenuOpen(false);
@@ -126,7 +126,7 @@ export default function Navigation() {
               element?.scrollIntoView({ behavior: "smooth" });
             }}
           >
-            speed button
+            Request Cover
           </Button>
         </div>
       )}
