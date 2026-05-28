@@ -1,4 +1,4 @@
-import { Facebook, Instagram, Linkedin } from "lucide-react";
+import { Facebook, Instagram, Star } from "lucide-react";
 import logoWordmark from "@assets/Transparent_1779996851927.png";
 
 export default function Footer() {
@@ -27,14 +27,14 @@ export default function Footer() {
 
           <div className="text-center md:text-right">
             <div className="flex items-center justify-center md:justify-end space-x-6 mb-6">
-              <a href="#" className="text-white/60 hover:text-white transition-colors" aria-label="Facebook">
+              <a href="https://www.facebook.com/EventManagementTeamServices" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-white transition-colors" aria-label="Facebook">
                 <Facebook className="w-6 h-6" />
               </a>
-              <a href="#" className="text-white/60 hover:text-white transition-colors" aria-label="Instagram">
+              <a href="https://www.instagram.com/emtservices.uk/" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-white transition-colors" aria-label="Instagram">
                 <Instagram className="w-6 h-6" />
               </a>
-              <a href="#" className="text-white/60 hover:text-white transition-colors" aria-label="LinkedIn">
-                <Linkedin className="w-6 h-6" />
+              <a href="https://g.page/r/CWbm1yja006BEBM/review" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-white transition-colors" aria-label="Google Reviews">
+                <Star className="w-6 h-6" />
               </a>
             </div>
             

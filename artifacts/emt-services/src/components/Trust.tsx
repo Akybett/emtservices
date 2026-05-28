@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Facebook, Instagram, Linkedin } from "lucide-react";
+import { Facebook, Instagram, Star } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 
 export default function Trust() {
@@ -59,41 +59,65 @@ export default function Trust() {
           <div>
             <h3 className="text-2xl font-bold text-foreground mb-8">Live Deployments</h3>
             <div className="grid grid-cols-1 gap-6">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5 }}
-                className="bg-muted/10 border border-border rounded-xl p-6 flex flex-col items-center justify-center min-h-[160px]"
+              <a
+                href="https://www.facebook.com/EventManagementTeamServices"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block"
+                data-testid="link-facebook"
               >
-                <Facebook className="w-10 h-10 text-[#1877F2] mb-4" />
-                <p className="font-medium text-foreground">Follow our latest updates</p>
-                <p className="text-sm text-muted-foreground">Facebook Feed Placeholder</p>
-              </motion.div>
-              
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.1 }}
-                className="bg-muted/10 border border-border rounded-xl p-6 flex flex-col items-center justify-center min-h-[160px]"
-              >
-                <Instagram className="w-10 h-10 text-[#E4405F] mb-4" />
-                <p className="font-medium text-foreground">View deployment galleries</p>
-                <p className="text-sm text-muted-foreground">Instagram Feed Placeholder</p>
-              </motion.div>
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5 }}
+                  className="bg-muted/10 border border-border rounded-xl p-6 flex flex-col items-center justify-center min-h-[140px] hover:border-[#1877F2]/40 hover:bg-[#1877F2]/5 transition-colors duration-300"
+                >
+                  <Facebook className="w-10 h-10 text-[#1877F2] mb-3" />
+                  <p className="font-medium text-foreground text-sm">EventManagementTeamServices</p>
+                  <p className="text-xs text-muted-foreground mt-1">Follow us on Facebook</p>
+                </motion.div>
+              </a>
 
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.2 }}
-                className="bg-muted/10 border border-border rounded-xl p-6 flex flex-col items-center justify-center min-h-[160px]"
+              <a
+                href="https://www.instagram.com/emtservices.uk/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block"
+                data-testid="link-instagram"
               >
-                <Linkedin className="w-10 h-10 text-[#0A66C2] mb-4" />
-                <p className="font-medium text-foreground">Professional network</p>
-                <p className="text-sm text-muted-foreground">LinkedIn Feed Placeholder</p>
-              </motion.div>
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: 0.1 }}
+                  className="bg-muted/10 border border-border rounded-xl p-6 flex flex-col items-center justify-center min-h-[140px] hover:border-[#E4405F]/40 hover:bg-[#E4405F]/5 transition-colors duration-300"
+                >
+                  <Instagram className="w-10 h-10 text-[#E4405F] mb-3" />
+                  <p className="font-medium text-foreground text-sm">@emtservices.uk</p>
+                  <p className="text-xs text-muted-foreground mt-1">View deployment galleries</p>
+                </motion.div>
+              </a>
+
+              <a
+                href="https://g.page/r/CWbm1yja006BEBM/review"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block"
+                data-testid="link-google-reviews"
+              >
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: 0.2 }}
+                  className="bg-muted/10 border border-border rounded-xl p-6 flex flex-col items-center justify-center min-h-[140px] hover:border-[#FBBC05]/40 hover:bg-[#FBBC05]/5 transition-colors duration-300"
+                >
+                  <Star className="w-10 h-10 text-[#FBBC05] mb-3" />
+                  <p className="font-medium text-foreground text-sm">Google Reviews</p>
+                  <p className="text-xs text-muted-foreground mt-1">Leave us a review</p>
+                </motion.div>
+              </a>
             </div>
           </div>
         </div>
