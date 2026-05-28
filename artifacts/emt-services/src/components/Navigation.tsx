@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import logoWordmark from "@assets/Transparent_1779996851927.png";
 
 export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -44,15 +45,18 @@ export default function Navigation() {
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex items-center justify-between">
           <div className="flex items-center">
-            <a 
-              href="#home" 
+            <a
+              href="#home"
               onClick={(e) => scrollToSection(e, "#home")}
-              className={cn(
-                "text-2xl font-bold tracking-tight transition-colors",
-                isScrolled ? "text-primary" : "text-white"
-              )}
+              className="flex items-center"
+              data-testid="link-logo-home"
             >
-              EMT Services
+              <img
+                src={logoWordmark}
+                alt="EMT Services"
+                className="h-12 w-auto"
+                style={{ filter: "brightness(0) invert(1)" }}
+              />
             </a>
           </div>
 

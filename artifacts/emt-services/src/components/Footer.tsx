@@ -1,4 +1,5 @@
 import { Facebook, Instagram, Linkedin } from "lucide-react";
+import logoWordmark from "@assets/Transparent_1779996851927.png";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -8,7 +9,12 @@ export default function Footer() {
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex flex-col md:flex-row justify-between items-center md:items-start gap-8">
           <div className="text-center md:text-left">
-            <h3 className="text-2xl font-bold text-white tracking-tight mb-4">EMT Services</h3>
+            <img
+              src={logoWordmark}
+              alt="EMT Services"
+              className="h-12 w-auto mb-4"
+              style={{ filter: "brightness(0) invert(1)" }}
+            />
             <p className="mb-2">
               <a href="mailto:info@emtservices.uk" className="hover:text-white transition-colors">
                 info@emtservices.uk
