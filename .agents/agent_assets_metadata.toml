@@ -6,3 +6,15 @@ id = "Rh33-DwO9tScFozoJG-fZ"
 uri = "file://attached_assets/hero.png"
 type = "image"
 title = "Hero event security"
+
+[[generated]]
+id = "4Y4UfdxknTIKPRbZWvdxJ"
+uri = "file://attached_assets/generated_images/stewarding_purple.png"
+type = "image"
+title = "stewarding purple hi-vis"
+
+[[generated]]
+id = "Z0vZeBqW14Ha9mubqV3dv"
+uri = "file://attached_assets/generated_images/fire_safety_red.png"
+type = "image"
+title = "fire safety red hi-vis"

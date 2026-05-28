@@ -3,6 +3,8 @@ import { ShieldCheck, HeartPulse, Users, Flame } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import securityImg from "@assets/690691086_122175045026935652_6242328256642375166_n_1779997274809.jpg";
 import medicalImg from "@assets/578260726_122142662474935652_771786064564167301_n_1779997274810.jpg";
+import stewardingImg from "@assets/generated_images/stewarding_purple.png";
+import fireSafetyImg from "@assets/generated_images/fire_safety_red.png";
 
 const services = [
   {
@@ -23,15 +25,15 @@ const services = [
     title: "Professional Stewarding",
     description: "Crowd management, traffic direction, and customer-facing duties carried out by operatives we have personally vetted. We do not simply fill positions — we take responsibility for the people we place.",
     icon: Users,
-    image: null,
-    alt: "",
+    image: stewardingImg,
+    alt: "Event stewards in purple hi-vis jackets at an outdoor festival",
   },
   {
     title: "Fire Safety Operations",
     description: "Fire safety planning and on-site compliance for events of all sizes, delivered in accordance with current legislation and the guidance frameworks we have followed throughout our career.",
     icon: Flame,
-    image: null,
-    alt: "",
+    image: fireSafetyImg,
+    alt: "Fire safety officers in red hi-vis jackets at an outdoor event venue",
   }
 ];
 
