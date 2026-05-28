@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
-import { Mail, CheckCircle2 } from "lucide-react";
+import { Mail, CheckCircle2, AlertCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Form,
@@ -14,6 +14,7 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { useSubmitContact } from "@workspace/api-client-react";
 
 const formSchema = z.object({
   fullName: z.string().min(2, "Full name is required"),
@@ -27,6 +28,26 @@ type FormValues = z.infer<typeof formSchema>;
 
 export default function Contact() {
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [serverError, setServerError] = useState<string | null>(null);
+
+  const { mutate: submitContact, isPending } = useSubmitContact({
+    mutation: {
+      onSuccess: () => {
+        setIsSubmitted(true);
+        setServerError(null);
+        setTimeout(() => {
+          form.reset();
+          setIsSubmitted(false);
+        }, 6000);
+      },
+      onError: (err: unknown) => {
+        const message =
+          (err as { response?: { data?: { error?: string } } })?.response?.data?.error ??
+          "We could not send your enquiry right now. Please email us directly at info@emtservices.uk";
+        setServerError(message);
+      },
+    },
+  });
 
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
@@ -40,12 +61,8 @@ export default function Contact() {
   });
 
   function onSubmit(data: FormValues) {
-    console.log(data);
-    setIsSubmitted(true);
-    setTimeout(() => {
-      form.reset();
-      setIsSubmitted(false);
-    }, 5000);
+    setServerError(null);
+    submitContact({ data });
   }
 
   return (
@@ -56,7 +73,7 @@ export default function Contact() {
           <div>
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Get in Touch</h2>
             <div className="w-20 h-1 bg-white/20 mb-8"></div>
-            
+
             <p className="text-lg text-white/80 mb-12 max-w-md">
               You will hear back from one of the directors directly — not a sales team. Fill in what you can and we will give you an honest assessment of what your event requires and whether we are the right fit.
             </p>
@@ -84,7 +101,7 @@ export default function Contact() {
                 <CheckCircle2 className="w-16 h-16 text-green-500" />
                 <h3 className="text-2xl font-bold">Enquiry Received</h3>
                 <p className="text-muted-foreground max-w-sm">
-                  Thank you. Our planning team will review your requirements and be in touch within one working day.
+                  Thank you. One of the directors will review your requirements and be in touch within one working day.
                 </p>
               </div>
             ) : (
@@ -151,18 +168,31 @@ export default function Contact() {
                       <FormItem>
                         <FormLabel>Services Required</FormLabel>
                         <FormControl>
-                          <Textarea 
-                            placeholder="Describe your event and required cover (security, medical, stewarding, etc.)" 
+                          <Textarea
+                            placeholder="Describe your event and required cover (security, medical, stewarding, etc.)"
                             className="min-h-[120px] resize-y"
-                            {...field} 
+                            {...field}
                           />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
                     )}
                   />
-                  <Button type="submit" size="lg" className="w-full font-semibold text-lg">
-                    speed button
+
+                  {serverError && (
+                    <div className="flex items-start gap-3 rounded-lg border border-destructive/30 bg-destructive/10 p-4 text-sm text-destructive">
+                      <AlertCircle className="w-4 h-4 mt-0.5 flex-shrink-0" />
+                      <span>{serverError}</span>
+                    </div>
+                  )}
+
+                  <Button
+                    type="submit"
+                    size="lg"
+                    className="w-full font-semibold text-lg"
+                    disabled={isPending}
+                  >
+                    {isPending ? "Sending…" : "speed button"}
                   </Button>
                 </form>
               </Form>
