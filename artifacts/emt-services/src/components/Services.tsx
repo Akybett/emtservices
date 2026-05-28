@@ -1,27 +1,37 @@
 import { motion } from "framer-motion";
 import { ShieldCheck, HeartPulse, Users, Flame } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import securityImg from "@assets/690691086_122175045026935652_6242328256642375166_n_1779997274809.jpg";
+import medicalImg from "@assets/578260726_122142662474935652_771786064564167301_n_1779997274810.jpg";
 
 const services = [
   {
     title: "SIA-Licensed Security",
     description: "SIA-licensed personnel placed and supervised by directors who have managed event security on the ground for over three decades. No layers of management between you and the people responsible.",
     icon: ShieldCheck,
+    image: securityImg,
+    alt: "EMT Services security team in branded purple hi-vis vests at an outdoor event",
   },
   {
     title: "Medical & Clinical Cover",
     description: "Practical medical planning built on real operational experience. For larger or more complex events, we work alongside trusted CQC-registered providers rather than overstate our own clinical capacity.",
     icon: HeartPulse,
+    image: medicalImg,
+    alt: "EMT Services medics in branded green hi-vis vests at an outdoor event",
   },
   {
     title: "Professional Stewarding",
     description: "Crowd management, traffic direction, and customer-facing duties carried out by operatives we have personally vetted. We do not simply fill positions — we take responsibility for the people we place.",
     icon: Users,
+    image: null,
+    alt: "",
   },
   {
     title: "Fire Safety Operations",
     description: "Fire safety planning and on-site compliance for events of all sizes, delivered in accordance with current legislation and the guidance frameworks we have followed throughout our career.",
     icon: Flame,
+    image: null,
+    alt: "",
   }
 ];
 
@@ -54,7 +64,7 @@ export default function Services() {
           </p>
         </div>
 
-        <motion.div 
+        <motion.div
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
           variants={containerVariants}
           initial="hidden"
@@ -63,8 +73,18 @@ export default function Services() {
         >
           {services.map((service, index) => (
             <motion.div key={index} variants={itemVariants}>
-              <Card className="h-full border-border bg-card hover:border-primary/50 transition-colors duration-300">
-                <CardHeader>
+              <Card className="h-full border-border bg-card hover:border-primary/50 transition-colors duration-300 overflow-hidden">
+                {service.image && (
+                  <div className="relative h-44 overflow-hidden">
+                    <img
+                      src={service.image}
+                      alt={service.alt}
+                      className="w-full h-full object-cover object-center transition-transform duration-500 hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-card via-card/20 to-transparent" />
+                  </div>
+                )}
+                <CardHeader className={service.image ? "pt-4" : ""}>
                   <div className="w-14 h-14 rounded-lg bg-primary/10 flex items-center justify-center mb-4 text-primary">
                     <service.icon className="w-7 h-7" />
                   </div>
