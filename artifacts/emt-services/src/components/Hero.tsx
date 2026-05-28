@@ -35,7 +35,7 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
           >
             <p className="text-lg md:text-2xl text-white/80 mb-10 max-w-2xl mx-auto font-medium">
-              Tailored security, medical, and stewarding cover for UK events with complete accountability.
+              A small, owner-operated firm. We do not have a head office full of staff — just two directors with 35 years of hands-on experience who turn up, plan carefully, and take personal responsibility for every deployment.
             </p>
           </motion.div>
 

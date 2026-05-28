@@ -3,28 +3,28 @@ import { CheckCircle2 } from "lucide-react";
 
 const points = [
   {
-    title: "Vigorously Vetted Personnel",
-    description: "We do not simply supply jacket fillers. Our stringent vetting process significantly exceeds standard industry benchmarks to guarantee high-calibre, reliable operatives."
+    title: "We Vet Our Own Staff",
+    description: "We do not simply supply jacket fillers. Every operative we place has been assessed by the directors personally. Our standards are higher than the industry minimum because our reputation depends on it."
   },
   {
-    title: "Diverse Team Expertise",
-    description: "We actively foster inclusive teams from all backgrounds. This delivers the cultural understanding essential for managing diverse crowds safely."
+    title: "Inclusive by Necessity",
+    description: "We actively build teams that reflect the crowds they manage. Understanding the people in front of you matters. We have found over the years that diverse teams simply perform better in complex crowd environments."
   },
   {
-    title: "Certified Knowledge",
-    description: "Our senior management includes registered trainers for Highfield and Pro Trainings. We are proud members of the Association of Healthcare Trainers (AOHT) and adhere strictly to their Code of Ethics."
+    title: "Qualified at Director Level",
+    description: "The directors of EMT Services are registered trainers for Highfield and Pro Trainings, and proud members of the Association of Healthcare Trainers (AOHT). We hold ourselves to that Code of Ethics on every job."
   },
   {
-    title: "Benchmarked Methodologies",
-    description: "Every deployment is validated against the Purple Guide and the SGSA's Green Guide. We provide comprehensive Event Risk Assessments and Method Statements (RAMS) to ensure transparent legal compliance."
+    title: "We Work to the Guides",
+    description: "Every deployment is planned against the Purple Guide and the SGSA's Green Guide. We produce full Event Risk Assessments and Method Statements (RAMS) as standard — not as an add-on."
   },
   {
-    title: "Data Compliance",
-    description: "We are registered with the Information Commissioner's Office (ICO), ensuring all personal data is managed securely and in full compliance with applicable legislation."
+    title: "ICO Registered",
+    description: "We are registered with the Information Commissioner's Office (ICO). Any personal data you share with us is held securely and handled in accordance with current data protection legislation."
   },
   {
-    title: "Integrity & Liaison",
-    description: "We proactively manage relationships with Safety Advisory Groups (SAGs). We never overreach — if a project is outside our operational capacity, we honestly advise the client or decline the work."
+    title: "We Know Our Limits",
+    description: "We manage our own relationships with Safety Advisory Groups (SAGs). If a project is genuinely beyond what we can deliver to our standard, we say so. We would rather lose the work than let a client down."
   }
 ];
 
@@ -36,7 +36,7 @@ export default function Foundations() {
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">The Foundation of Our Service</h2>
           <div className="w-20 h-1 bg-primary mx-auto mb-6"></div>
           <p className="text-muted-foreground text-lg">
-            Operational excellence built on 35 years of meticulous planning and uncompromising standards.
+            We are not a large company, and we do not pretend to be. These are the principles the directors of EMT Services have worked to every single day across 35 years in the industry.
           </p>
         </div>
 

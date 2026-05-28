@@ -5,22 +5,22 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 const services = [
   {
     title: "SIA-Licensed Security",
-    description: "We operate under a unified command structure for sophisticated crowd management with SIA-licensed personnel and comprehensive site security.",
+    description: "SIA-licensed personnel placed and supervised by directors who have managed event security on the ground for over three decades. No layers of management between you and the people responsible.",
     icon: ShieldCheck,
   },
   {
     title: "Medical & Clinical Cover",
-    description: "Comprehensive event medical planning and scalable clinical solutions, frequently partnering with CQC-registered providers for large or complex events.",
+    description: "Practical medical planning built on real operational experience. For larger or more complex events, we work alongside trusted CQC-registered providers rather than overstate our own clinical capacity.",
     icon: HeartPulse,
   },
   {
     title: "Professional Stewarding",
-    description: "Expert crowd management, traffic direction, and customer service delivered by trained, vetted operatives.",
+    description: "Crowd management, traffic direction, and customer-facing duties carried out by operatives we have personally vetted. We do not simply fill positions — we take responsibility for the people we place.",
     icon: Users,
   },
   {
     title: "Fire Safety Operations",
-    description: "Integrated fire safety management and regulatory compliance for events of all sizes.",
+    description: "Fire safety planning and on-site compliance for events of all sizes, delivered in accordance with current legislation and the guidance frameworks we have followed throughout our career.",
     icon: Flame,
   }
 ];
@@ -48,7 +48,10 @@ export default function Services() {
       <div className="container mx-auto px-4 md:px-6">
         <div className="mb-16 text-center max-w-3xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Core Services</h2>
-          <div className="w-20 h-1 bg-primary mx-auto"></div>
+          <div className="w-20 h-1 bg-primary mx-auto mb-6"></div>
+          <p className="text-muted-foreground text-lg">
+            We are a small operation. What we offer is direct access to experienced, accountable professionals — not a large agency placing unfamiliar staff.
+          </p>
         </div>
 
         <motion.div 

@@ -58,7 +58,7 @@ export default function Contact() {
             <div className="w-20 h-1 bg-white/20 mb-8"></div>
             
             <p className="text-lg text-white/80 mb-12 max-w-md">
-              Discuss your event requirements with our operational planning team. We provide tailored safety solutions grounded in 35 years of UK industry experience.
+              You will hear back from one of the directors directly — not a sales team. Fill in what you can and we will give you an honest assessment of what your event requires and whether we are the right fit.
             </p>
 
             <div className="space-y-8">
