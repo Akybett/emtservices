@@ -10,32 +10,32 @@ import bigTopImg from "@assets/leeds-festival_(1)_1779997274806.jpg";
 import indoorVenueImg from "@assets/PXL_20251004_024016677_1779997274807.jpg";
 
 const galleryImages = [
-  { src: djConcertImg, alt: "Outdoor concert stage with DJ performing to a crowd", caption: "Concert Security" },
-  { src: festivalCrowdImg, alt: "Large festival crowd at an outdoor event", caption: "Crowd Management" },
-  { src: manorHouseImg, alt: "Event at a historic manor house with crowd on lawn", caption: "Venue Events" },
-  { src: fireworksImg, alt: "Emergency ambulance at a fireworks display", caption: "Fireworks Cover" },
-  { src: bigTopImg, alt: "Large festival big-top tents at a music festival", caption: "Festival Operations" },
-  { src: indoorVenueImg, alt: "Indoor venue concert with stage lighting", caption: "Indoor Venues" },
+  { src: djConcertImg, alt: "Outdoor concert stage with DJ performing to a crowd", caption: "Concert" },
+  { src: festivalCrowdImg, alt: "Open-air festival crowd at a summer event", caption: "Open-Air Festival" },
+  { src: manorHouseImg, alt: "Event at a historic manor house with crowd on lawn", caption: "Estate Event" },
+  { src: fireworksImg, alt: "Emergency ambulance on standby at a fireworks display", caption: "Fireworks Display" },
+  { src: bigTopImg, alt: "Festival big-top tents at a summer music event", caption: "Summer Festival" },
+  { src: indoorVenueImg, alt: "Indoor venue with stage lighting", caption: "Indoor Event" },
 ];
 
 const testimonials = [
   {
-    quote: "EMT Services provided exemplary cover for our annual city festival. Their staff were professional, discreet, and handled every situation with absolute competence.",
-    name: "Venue Manager",
-    event: "Annual City Festival",
-    initial: "VM",
-  },
-  {
-    quote: "We have worked with the directors personally for several years now. Their knowledge of event safety legislation is second to none, and they are always completely straight with us.",
+    quote: "Straightforward to deal with from start to finish. They told us exactly what we needed, did not try to upsell anything, and the cover on the day was solid.",
     name: "Event Organiser",
-    event: "Community Events",
+    event: "Community Event",
     initial: "EO",
   },
   {
-    quote: "What sets them apart is that the directors are on site themselves. You are not dealing with a faceless agency — you know exactly who is responsible and they take that seriously.",
-    name: "Local Council",
-    event: "Public Events",
-    initial: "LC",
+    quote: "We needed medical and stewarding cover for a small outdoor event. They were honest about what was appropriate for our size and did not try to oversell. Exactly what we needed.",
+    name: "Venue Manager",
+    event: "Outdoor Event",
+    initial: "VM",
+  },
+  {
+    quote: "The directors were on site in person. That is not something you get from a larger agency and it made a real difference to how things ran on the day.",
+    name: "Event Coordinator",
+    event: "Public Event",
+    initial: "EC",
   },
 ];
 
@@ -45,10 +45,10 @@ export default function Trust() {
       <div className="container mx-auto px-4 md:px-6">
 
         <div className="mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Trusted by the Community</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Events We Have Covered</h2>
           <div className="w-20 h-1 bg-primary mb-6"></div>
           <p className="text-muted-foreground text-lg max-w-2xl">
-            A selection of the events and venues we have covered over the years — from local community gatherings to large multi-day festivals.
+            A honest cross-section of the work we do — from small community events to larger gatherings. We do not pick and choose what to show based on scale.
           </p>
         </div>
 
