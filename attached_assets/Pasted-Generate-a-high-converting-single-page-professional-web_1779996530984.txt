@@ -1,0 +1,65 @@
+Generate a high-converting, single-page professional website for 'EMT Services', a UK event safety company with 35 years of operational experience. The design must be modern, highly professional, and mobile-responsive. Use a colour palette of deep navy blue, slate grey, and crisp white, alongside clean, sans-serif typography.
+
+Copywriting Rules:
+All text must be generated in formal, professional British English. The tone is humble, straightforward, and honest. You are strictly forbidden from using modern slang, corporate fluff, or exaggerated claims. Focus entirely on competence, compliance, and direct accountability.
+
+Structure the page with the following sections:
+
+Section 1: Header (Sticky Navigation)
+
+Left: Placeholder for the EMT Services company logo.
+
+Right: Navigation links (Home, Services, Foundations, Trust, Contact) and a primary CTA button labelled exactly 'speed button'.
+
+Section 2: Hero
+
+Background: A split layout with a strong background image overlay of event security and medical staff.
+
+Headline (H1): "Event Safety Guaranteed. 35 Years of Proven Expertise."
+
+Subheading: "Tailored security, medical, and stewarding cover for UK events with complete accountability."
+
+Action: A primary CTA button labelled exactly 'speed button' linking to the contact section.
+
+Section 3: Core Services (4-Column Grid)
+
+Card 1 (Security): SIA-licensed personnel and site security. We operate under a unified command structure for sophisticated crowd management.
+
+Card 2 (Medical): Comprehensive planning and clinical cover. We offer scalable solutions, frequently partnering with CQC-registered providers for large or complex events.
+
+Card 3 (Stewarding): Crowd management, traffic direction, and customer service.
+
+Card 4 (Fire Safety): Integrated fire safety operations and compliance.
+
+Section 4: The Foundation of Our Service
+
+Vigorously Vetted Personnel: We do not just supply jacket fillers. Our stringent vetting process significantly exceeds standard industry benchmarks to guarantee high-calibre, reliable operatives.
+
+Diverse Team Expertise: We actively foster inclusive teams from all backgrounds. This delivers the cultural understanding essential for managing diverse crowds safely.
+
+Certified Knowledge: Our senior management includes registered trainers for Highfield and Pro Trainings. We are proud members of the Association of Healthcare Trainers (AOHT) and adhere strictly to their Code of Ethics.
+
+Benchmarked Methodologies: Every single deployment is validated against the Purple Guide and the SGSA's Green Guide. We provide comprehensive Event Risk Assessments and Method Statements (RAMS) to ensure transparent legal compliance.
+
+Data Compliance: We are registered with the Information Commissioner’s Office (ICO), ensuring personal data is managed securely.
+
+Integrity & Liaison: We proactively manage relationships with Safety Advisory Groups (SAGs). Crucially, we never overreach. If a project is outside our operational capacity, we honestly advise the client or turn the work down.
+
+Section 5: Trust, Reviews, and Socials (Split Layout)
+
+Heading: "Trusted by the Community".
+
+Left Column: A grid of client testimonials and the logos of supported events.
+
+Right Column: A "Live Deployments" social media space with large placeholder icons for Facebook, Instagram, and LinkedIn.
+
+Section 6: Lead Generation & Contact
+
+Left Side: Contact details. This must include the exact email address: info@emtservices.uk. CRITICAL INSTRUCTION: Do NOT include, generate, or hallucinate any phone numbers anywhere on this website.
+
+Right Side: A clean contact form with input fields for: Full Name, Email Address, Event Date, Event Location, and Services Required.
+
+Submit Button: The form submission button must be labelled exactly 'speed button'.
+
+Section 7: Footer
+Include standard company details, the info@emtservices.uk email address, a brief copyright notice, an ICO registration note, and social media link icons. Strictly no phone numbers.
