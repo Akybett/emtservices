@@ -2,11 +2,24 @@ import { motion } from "framer-motion";
 import { CheckCircle2, HeartPulse } from "lucide-react";
 import bgImg from "@assets/PXL_20250822_173135757_1779997274807.jpg";
 import aohtLogo from "@assets/AoHT-Member-Logo_1780063205128.png";
+import proTrainingsLogo from "@assets/ProTrainings_Logo_-_stacked_(RGB)_1780063367815.png";
+import highfieldLogo from "@assets/HG_Logo_1780063421961.png";
+
+const logoAccreditations = [
+  {
+    src: proTrainingsLogo,
+    alt: "ProTrainings — Registered Trainers",
+    className: "max-h-16 max-w-full object-contain",
+  },
+  {
+    src: highfieldLogo,
+    alt: "Highfield — Registered Trainers",
+    className: "max-h-9 max-w-full object-contain",
+  },
+];
 
 const accreditations = [
   "NEBOSH Certified (Director Level)",
-  "Highfield Registered Trainers",
-  "Pro Trainings Registered Trainers",
   "ICO Registered",
 ];
 
@@ -122,6 +135,16 @@ export default function Foundations() {
               <span className="text-sm font-bold text-foreground leading-tight">ResusReady</span>
               <span className="text-[11px] text-muted-foreground mt-0.5">Membership RR-715313</span>
             </div>
+
+            {/* Logo accreditations */}
+            {logoAccreditations.map((logo) => (
+              <div
+                key={logo.alt}
+                className="bg-white rounded-xl border border-border shadow-sm p-4 flex items-center justify-center h-24 w-40"
+              >
+                <img src={logo.src} alt={logo.alt} className={logo.className} />
+              </div>
+            ))}
 
             {/* Text-based accreditations */}
             {accreditations.map((item) => (
