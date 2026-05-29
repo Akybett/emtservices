@@ -10,12 +10,9 @@ const eventTypes = [
   { label: "Camping Shows", icon: TreePine },
   { label: "Castle & Estate Events", icon: Building2 },
   { label: "Fireworks Displays", icon: Sparkles },
-  { label: "Outdoor Concerts", icon: Music2 },
-  { label: "Community Fêtes", icon: PartyPopper },
   { label: "Corporate Events", icon: Building2 },
   { label: "Charity Events", icon: Users },
   { label: "Historical Events", icon: Building2 },
-  { label: "Country Fairs", icon: TreePine },
   { label: "Sporting Events", icon: Shield },
 ];
 
