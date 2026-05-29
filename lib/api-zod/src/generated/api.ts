@@ -32,9 +32,13 @@ export const submitContactBodyServicesRequiredMin = 10;
 export const SubmitContactBody = zod.object({
   "fullName": zod.string().min(submitContactBodyFullNameMin),
   "email": zod.string().email(),
+  "phone": zod.string().optional().describe('Contact phone number so a director can call to discuss'),
+  "organisation": zod.string().optional().describe('Company, organisation, or event name (optional)'),
   "eventDate": zod.string(),
   "eventLocation": zod.string().min(submitContactBodyEventLocationMin),
+  "expectedAttendance": zod.string().optional().describe('Approximate number of attendees (optional)'),
   "servicesRequired": zod.string().min(submitContactBodyServicesRequiredMin),
+  "preferredContact": zod.string().optional().describe('How and when the enquirer would prefer to be contacted'),
   "recaptchaToken": zod.string().optional().describe('Google reCAPTCHA v3 token, verified server-side when configured'),
   "website": zod.string().optional().describe('Honeypot field — must be empty; bots that fill it are rejected')
 })

@@ -13,11 +13,19 @@ export interface ContactRequest {
   /** @minLength 2 */
   fullName: string;
   email: string;
+  /** Contact phone number so a director can call to discuss */
+  phone?: string;
+  /** Company, organisation, or event name (optional) */
+  organisation?: string;
   eventDate: string;
   /** @minLength 2 */
   eventLocation: string;
+  /** Approximate number of attendees (optional) */
+  expectedAttendance?: string;
   /** @minLength 10 */
   servicesRequired: string;
+  /** How and when the enquirer would prefer to be contacted */
+  preferredContact?: string;
   /** Google reCAPTCHA v3 token, verified server-side when configured */
   recaptchaToken?: string;
   /** Honeypot field — must be empty; bots that fill it are rejected */

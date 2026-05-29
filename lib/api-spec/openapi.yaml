@@ -90,14 +90,26 @@ components:
         email:
           type: string
           format: email
+        phone:
+          type: string
+          description: Contact phone number so a director can call to discuss
+        organisation:
+          type: string
+          description: Company, organisation, or event name (optional)
         eventDate:
           type: string
         eventLocation:
           type: string
           minLength: 2
+        expectedAttendance:
+          type: string
+          description: Approximate number of attendees (optional)
         servicesRequired:
           type: string
           minLength: 10
+        preferredContact:
+          type: string
+          description: How and when the enquirer would prefer to be contacted
         recaptchaToken:
           type: string
           description: Google reCAPTCHA v3 token, verified server-side when configured

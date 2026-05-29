@@ -14,9 +14,13 @@ const noNewlines = (v: string) => !/[\r\n]/.test(v);
 const ContactSchema = z.object({
   fullName: z.string().min(2).max(120).refine(noNewlines, "Invalid characters"),
   email: z.string().email().max(254),
+  phone: z.string().max(40).refine(noNewlines, "Invalid characters").optional(),
+  organisation: z.string().max(160).refine(noNewlines, "Invalid characters").optional(),
   eventDate: z.string().min(1).max(60).refine(noNewlines, "Invalid characters"),
   eventLocation: z.string().min(2).max(160).refine(noNewlines, "Invalid characters"),
+  expectedAttendance: z.string().max(60).refine(noNewlines, "Invalid characters").optional(),
   servicesRequired: z.string().min(10).max(5000),
+  preferredContact: z.string().max(300).optional(),
   recaptchaToken: z.string().max(4000).optional(),
 });
 
@@ -142,7 +146,18 @@ router.post("/contact", async (req, res) => {
     return;
   }
 
-  const { fullName, email, eventDate, eventLocation, servicesRequired, recaptchaToken } = parsed.data;
+  const {
+    fullName,
+    email,
+    phone,
+    organisation,
+    eventDate,
+    eventLocation,
+    expectedAttendance,
+    servicesRequired,
+    preferredContact,
+    recaptchaToken,
+  } = parsed.data;
 
   // Invisible reCAPTCHA v3 check (skipped automatically when not configured).
   const captcha = await verifyRecaptcha(recaptchaToken, "contact_submit");
@@ -157,12 +172,17 @@ router.post("/contact", async (req, res) => {
   const toAddress = process.env.CONTACT_EMAIL ?? "info@emtservices.uk";
 
   // Escape all user-supplied content before embedding in the HTML email body.
+  const notProvided = "—";
   const safe = {
     fullName: escapeHtml(fullName),
     email: escapeHtml(email),
+    phone: phone ? escapeHtml(phone) : notProvided,
+    organisation: organisation ? escapeHtml(organisation) : notProvided,
     eventDate: escapeHtml(eventDate),
     eventLocation: escapeHtml(eventLocation),
+    expectedAttendance: expectedAttendance ? escapeHtml(expectedAttendance) : notProvided,
     servicesRequired: escapeHtml(servicesRequired),
+    preferredContact: preferredContact ? escapeHtml(preferredContact) : notProvided,
   };
 
   const htmlBody = `
@@ -172,7 +192,7 @@ router.post("/contact", async (req, res) => {
       </h2>
       <table style="width: 100%; border-collapse: collapse; margin-top: 16px;">
         <tr>
-          <td style="padding: 8px 0; font-weight: bold; color: #475569; width: 160px;">Name</td>
+          <td style="padding: 8px 0; font-weight: bold; color: #475569; width: 180px;">Name</td>
           <td style="padding: 8px 0; color: #1e293b;">${safe.fullName}</td>
         </tr>
         <tr style="background: #f8fafc;">
@@ -182,12 +202,28 @@ router.post("/contact", async (req, res) => {
           </td>
         </tr>
         <tr>
+          <td style="padding: 8px 0; font-weight: bold; color: #475569;">Phone</td>
+          <td style="padding: 8px 0; color: #1e293b;">${safe.phone}</td>
+        </tr>
+        <tr style="background: #f8fafc;">
+          <td style="padding: 8px 4px; font-weight: bold; color: #475569;">Organisation</td>
+          <td style="padding: 8px 4px; color: #1e293b;">${safe.organisation}</td>
+        </tr>
+        <tr>
           <td style="padding: 8px 0; font-weight: bold; color: #475569;">Event Date</td>
           <td style="padding: 8px 0; color: #1e293b;">${safe.eventDate}</td>
         </tr>
         <tr style="background: #f8fafc;">
           <td style="padding: 8px 4px; font-weight: bold; color: #475569;">Event Location</td>
           <td style="padding: 8px 4px; color: #1e293b;">${safe.eventLocation}</td>
+        </tr>
+        <tr>
+          <td style="padding: 8px 0; font-weight: bold; color: #475569;">Expected Attendance</td>
+          <td style="padding: 8px 0; color: #1e293b;">${safe.expectedAttendance}</td>
+        </tr>
+        <tr style="background: #f8fafc;">
+          <td style="padding: 8px 4px; font-weight: bold; color: #475569;">Preferred Contact</td>
+          <td style="padding: 8px 4px; color: #1e293b;">${safe.preferredContact}</td>
         </tr>
       </table>
       <div style="margin-top: 20px;">
@@ -203,10 +239,14 @@ router.post("/contact", async (req, res) => {
   const textBody = `
 New Enquiry — EMT Services Website
 ===================================
-Name:           ${fullName}
-Reply-To Email: ${email}
-Event Date:     ${eventDate}
-Event Location: ${eventLocation}
+Name:                ${fullName}
+Reply-To Email:      ${email}
+Phone:               ${phone ?? notProvided}
+Organisation:        ${organisation ?? notProvided}
+Event Date:          ${eventDate}
+Event Location:      ${eventLocation}
+Expected Attendance: ${expectedAttendance ?? notProvided}
+Preferred Contact:   ${preferredContact ?? notProvided}
 
 Services Required / Details:
 ${servicesRequired}

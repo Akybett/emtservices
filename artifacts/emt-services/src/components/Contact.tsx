@@ -21,9 +21,13 @@ import emblem from "@assets/Transparent-icon_1780050423852.png";
 const formSchema = z.object({
   fullName: z.string().min(2, "Full name is required"),
   email: z.string().email("Valid email is required"),
+  phone: z.string().max(40, "Please provide a valid phone number").optional(),
+  organisation: z.string().max(160).optional(),
   eventDate: z.string().min(1, "Event date is required"),
   eventLocation: z.string().min(2, "Location is required"),
+  expectedAttendance: z.string().max(60).optional(),
   servicesRequired: z.string().min(10, "Please provide more details about your requirements"),
+  preferredContact: z.string().max(300).optional(),
   website: z.string().max(0, ""),
 });
 
@@ -57,9 +61,13 @@ export default function Contact() {
     defaultValues: {
       fullName: "",
       email: "",
+      phone: "",
+      organisation: "",
       eventDate: "",
       eventLocation: "",
+      expectedAttendance: "",
       servicesRequired: "",
+      preferredContact: "",
       website: "",
     },
   });
@@ -89,7 +97,7 @@ export default function Contact() {
             <div className="w-20 h-1 bg-white/20 mb-8"></div>
 
             <p className="text-lg text-white/80 mb-12 max-w-md">
-              You will hear back from one of the directors directly — not a sales team. Fill in what you can and we will give you an honest assessment of what your event requires and whether we are the right fit.
+              You will hear back from one of the directors directly — not a sales team. Fill in what you can — including a phone number and the best time to reach you if you would prefer a call — and we will give you an honest assessment of what your event requires and whether we are the right fit.
             </p>
 
             <div className="space-y-8">
@@ -150,14 +158,47 @@ export default function Contact() {
                       </FormItem>
                     )}
                   />
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <FormField
+                      control={form.control}
+                      name="email"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel>Email Address</FormLabel>
+                          <FormControl>
+                            <Input type="email" placeholder="your@email.com" {...field} />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+                    <FormField
+                      control={form.control}
+                      name="phone"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel>
+                            Phone <span className="text-muted-foreground font-normal">(optional)</span>
+                          </FormLabel>
+                          <FormControl>
+                            <Input type="tel" placeholder="So we can call to discuss" {...field} />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+                  </div>
                   <FormField
                     control={form.control}
-                    name="email"
+                    name="organisation"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>Email Address</FormLabel>
+                        <FormLabel>
+                          Organisation / Event Name{" "}
+                          <span className="text-muted-foreground font-normal">(optional)</span>
+                        </FormLabel>
                         <FormControl>
-                          <Input type="email" placeholder="your@email.com" {...field} />
+                          <Input placeholder="Company, organisation, or event name" {...field} />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
@@ -193,6 +234,22 @@ export default function Contact() {
                   </div>
                   <FormField
                     control={form.control}
+                    name="expectedAttendance"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>
+                          Expected Attendance{" "}
+                          <span className="text-muted-foreground font-normal">(optional)</span>
+                        </FormLabel>
+                        <FormControl>
+                          <Input placeholder="Approximate number of attendees" {...field} />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                  <FormField
+                    control={form.control}
                     name="servicesRequired"
                     render={({ field }) => (
                       <FormItem>
@@ -203,6 +260,22 @@ export default function Contact() {
                             className="min-h-[120px] resize-y"
                             {...field}
                           />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                  <FormField
+                    control={form.control}
+                    name="preferredContact"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>
+                          Preferred Contact Method & Times{" "}
+                          <span className="text-muted-foreground font-normal">(optional)</span>
+                        </FormLabel>
+                        <FormControl>
+                          <Input placeholder="e.g. Call weekday mornings, or email any time" {...field} />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
