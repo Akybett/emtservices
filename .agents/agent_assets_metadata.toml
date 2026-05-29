@@ -30,6 +30,18 @@ uri = "file://attached_assets/generated_images/fire_safety_card.png"
 type = "image"
 title = "fire safety red hi vis"
 
+[[generated]]
+id = "WecLjkXYZzMeYlG5AC-JC"
+uri = "file://attached_assets/generated_images/stewarding_base.png"
+type = "image"
+title = "stewards plain yellow vests"
+
+[[generated]]
+id = "FtTZmDjj_tlmeKp_UM0A9"
+uri = "file://attached_assets/generated_images/fire_safety_base.png"
+type = "image"
+title = "fire plain red vests"
+
 [[outputs]]
 id = "C2jbvju873a8c6mw3ryHh"
 uri = "file://attached_assets/generated_images/stewarding_card.png"
