@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { ShieldCheck, HeartPulse, Users, Flame } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import securityImg from "@assets/690691086_122175045026935652_6242328256642375166_n_1780012979478.jpg";
-import medicalImg from "@assets/ReLens_Image_2024-09-07_12_55_36_1999x1953~2_1780012979478.jpg";
+import medicalImg from "@assets/9b51872d-f792-485b-89a3-c7e5bc79f198_1780050541978.jpg";
 import stewardingImg from "@assets/generated_images/stewarding_card.png";
 import fireSafetyImg from "@assets/generated_images/fire_safety_card.png";
 
@@ -19,7 +19,7 @@ const services = [
     description: "We provide on-site medical planning and first aid cover. We are not CQC-registered and do not offer patient conveyance. For events requiring clinical or ambulance provision, we work closely alongside trusted CQC-registered providers to ensure the right level of care is in place. We will never overstate our own clinical capacity.",
     icon: HeartPulse,
     image: medicalImg,
-    imageAlt: "EMT Services Rescue and Medical Unit vehicle on standby at an outdoor event",
+    imageAlt: "EMT Services medical team in branded MEDIC hi-vis on standby at an outdoor event",
   },
   {
     title: "Professional Stewarding",
