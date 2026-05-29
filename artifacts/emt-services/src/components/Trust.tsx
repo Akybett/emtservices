@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Facebook, Instagram, Star, Loader2, ExternalLink } from "lucide-react";
+import { Facebook, Instagram, Linkedin, Star, Loader2, ExternalLink } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { useGetReviews } from "@workspace/api-client-react";
 
@@ -197,6 +197,26 @@ export default function Trust() {
                   <Instagram className="w-8 h-8 text-[#E4405F] mb-2" />
                   <p className="font-medium text-foreground text-sm">@emtservices.uk</p>
                   <p className="text-xs text-muted-foreground mt-1">Follow our events on Instagram</p>
+                </motion.div>
+              </a>
+
+              <a
+                href="https://www.linkedin.com/company/108060355/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block"
+                data-testid="link-linkedin"
+              >
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: 0.15 }}
+                  className="bg-muted/10 border border-border rounded-xl p-6 flex flex-col items-center justify-center min-h-[120px] hover:border-[#0A66C2]/40 hover:bg-[#0A66C2]/5 transition-colors duration-300"
+                >
+                  <Linkedin className="w-8 h-8 text-[#0A66C2] mb-2" />
+                  <p className="font-medium text-foreground text-sm">EMT Services</p>
+                  <p className="text-xs text-muted-foreground mt-1">Connect with us on LinkedIn</p>
                 </motion.div>
               </a>
 

@@ -1,4 +1,4 @@
-import { Facebook, Instagram, Star } from "lucide-react";
+import { Facebook, Instagram, Linkedin, Star } from "lucide-react";
 import logoWordmark from "@assets/Transparent_1779996851927.png";
 import { Link } from "wouter";
 
@@ -51,6 +51,15 @@ export default function Footer() {
                 aria-label="Instagram"
               >
                 <Instagram className="w-6 h-6" />
+              </a>
+              <a
+                href="https://www.linkedin.com/company/108060355/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white/60 hover:text-[#0A66C2] transition-colors"
+                aria-label="LinkedIn"
+              >
+                <Linkedin className="w-6 h-6" />
               </a>
               <a
                 href="https://g.page/r/CWbm1yja006BEBM/review"
