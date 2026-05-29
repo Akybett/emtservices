@@ -98,6 +98,9 @@ components:
         servicesRequired:
           type: string
           minLength: 10
+        recaptchaToken:
+          type: string
+          description: Google reCAPTCHA v3 token, verified server-side when configured
       required:
         - fullName
         - email

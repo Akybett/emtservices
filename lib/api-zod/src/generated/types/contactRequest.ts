@@ -15,4 +15,6 @@ export interface ContactRequest {
   eventLocation: string;
   /** @minLength 10 */
   servicesRequired: string;
+  /** Google reCAPTCHA v3 token, verified server-side when configured */
+  recaptchaToken?: string;
 }

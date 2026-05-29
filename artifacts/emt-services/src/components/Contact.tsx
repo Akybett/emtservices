@@ -15,6 +15,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useSubmitContact } from "@workspace/api-client-react";
+import { getRecaptchaToken } from "@/lib/recaptcha";
 import emblem from "@assets/Transparent-icon_1780050423852.png";
 
 const formSchema = z.object({
@@ -63,10 +64,11 @@ export default function Contact() {
     },
   });
 
-  function onSubmit(data: FormValues) {
+  async function onSubmit(data: FormValues) {
     setServerError(null);
     const { website: _honeypot, ...payload } = data;
-    submitContact({ data: payload });
+    const recaptchaToken = await getRecaptchaToken("contact_submit");
+    submitContact({ data: { ...payload, recaptchaToken } });
   }
 
   return (
@@ -222,6 +224,28 @@ export default function Contact() {
                   >
                     {isPending ? "Sending…" : "Request Cover"}
                   </Button>
+
+                  <p className="text-xs text-muted-foreground text-center">
+                    This site is protected by reCAPTCHA and the Google{" "}
+                    <a
+                      href="https://policies.google.com/privacy"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="underline hover:text-foreground"
+                    >
+                      Privacy Policy
+                    </a>{" "}
+                    and{" "}
+                    <a
+                      href="https://policies.google.com/terms"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="underline hover:text-foreground"
+                    >
+                      Terms of Service
+                    </a>{" "}
+                    apply.
+                  </p>
                 </form>
               </Form>
             )}

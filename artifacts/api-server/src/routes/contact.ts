@@ -17,7 +17,53 @@ const ContactSchema = z.object({
   eventDate: z.string().min(1).max(60).refine(noNewlines, "Invalid characters"),
   eventLocation: z.string().min(2).max(160).refine(noNewlines, "Invalid characters"),
   servicesRequired: z.string().min(10).max(5000),
+  recaptchaToken: z.string().max(4000).optional(),
 });
+
+// Minimum reCAPTCHA v3 score (0.0 = bot, 1.0 = human) to accept a submission.
+const RECAPTCHA_MIN_SCORE = 0.5;
+
+interface RecaptchaVerifyResult {
+  ok: boolean;
+  reason?: string;
+}
+
+// Verifies a reCAPTCHA v3 token with Google. When no secret is configured,
+// verification is skipped so the form keeps working (graceful degradation).
+async function verifyRecaptcha(token: string | undefined): Promise<RecaptchaVerifyResult> {
+  const secret = process.env.RECAPTCHA_SECRET_KEY;
+  if (!secret) return { ok: true };
+
+  if (!token) return { ok: false, reason: "missing-token" };
+
+  try {
+    const params = new URLSearchParams({ secret, response: token });
+    const response = await fetch("https://www.google.com/recaptcha/api/siteverify", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: params.toString(),
+    });
+
+    if (!response.ok) return { ok: false, reason: `http-${response.status}` };
+
+    const result = (await response.json()) as {
+      success: boolean;
+      score?: number;
+      action?: string;
+      "error-codes"?: string[];
+    };
+
+    if (!result.success) {
+      return { ok: false, reason: (result["error-codes"] ?? ["failed"]).join(",") };
+    }
+    if (typeof result.score === "number" && result.score < RECAPTCHA_MIN_SCORE) {
+      return { ok: false, reason: `low-score-${result.score}` };
+    }
+    return { ok: true };
+  } catch {
+    return { ok: false, reason: "verify-error" };
+  }
+}
 
 function encodeHeader(value: string): string {
   // RFC 2047 encoded-word for any non-ASCII characters in headers.
@@ -88,7 +134,18 @@ router.post("/contact", async (req, res) => {
     return;
   }
 
-  const { fullName, email, eventDate, eventLocation, servicesRequired } = parsed.data;
+  const { fullName, email, eventDate, eventLocation, servicesRequired, recaptchaToken } = parsed.data;
+
+  // Invisible reCAPTCHA v3 check (skipped automatically when not configured).
+  const captcha = await verifyRecaptcha(recaptchaToken);
+  if (!captcha.ok) {
+    req.log.warn({ reason: captcha.reason }, "reCAPTCHA verification failed — rejecting submission");
+    res.status(400).json({
+      error: "We could not verify your submission. Please refresh the page and try again.",
+    });
+    return;
+  }
+
   const toAddress = process.env.CONTACT_EMAIL ?? "info@emtservices.uk";
 
   // Escape all user-supplied content before embedding in the HTML email body.
