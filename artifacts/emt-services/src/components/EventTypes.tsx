@@ -1,10 +1,12 @@
 import { motion } from "framer-motion";
-import { Music2, Flame, Users, Shield, PartyPopper, Building2, TreePine, Sparkles } from "lucide-react";
+import { Music2, Flame, Users, Shield, PartyPopper, Building2, TreePine, Sparkles, Heart } from "lucide-react";
 
 const eventTypes = [
   { label: "Music Festivals", icon: Music2 },
   { label: "Cultural Events", icon: Sparkles },
   { label: "Carnivals & Parades", icon: PartyPopper },
+  { label: "Pride Events", icon: Heart },
+  { label: "Rockabilly Events", icon: Music2 },
   { label: "Castle & Estate Events", icon: Building2 },
   { label: "Fireworks Displays", icon: Sparkles },
   { label: "Outdoor Concerts", icon: Music2 },
