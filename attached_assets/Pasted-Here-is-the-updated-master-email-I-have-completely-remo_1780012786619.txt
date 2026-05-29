@@ -1,0 +1,49 @@
+Here is the updated master email. I have completely removed the "one working day" phrasing and updated the section to instruct the designer to simply state that you will get back to emails as soon as possible.
+
+I have also woven in all your recent changes regarding the text for qualifications (making sure it clearly states only you hold the NEBOSH, but both you and Sid hold other director-level qualifications), the self-employed staffing model, and the replacement for the confusing line about scale.
+
+Subject: Detailed Website Updates: Terminology, Layout, Reviews, Imagery and Contact Information
+
+Hi [Designer's Name],
+
+Following up on our previous thoughts, Sid and I have had a closer look at the site and have a more detailed breakdown of the updates we need. As you know, we operate in a highly competitive space—both locally and nationally—so our digital presence needs to strike the exact right balance. We must come across as professional and highly capable, but also entirely approachable and humble.
+
+Could you please action the following adjustments?
+
+"Events We Have Covered" Portfolio: Looking at the grid of events we have covered, starting from the top left, please change the text label from "concert" to "Camper Marmalade". Furthermore, for the sixth and final image in that section, please change the label from "Indoor Event" to "Indoor Rave".
+
+Site Imagery and Backgrounds: We are mindful that the site currently feels a bit light on imagery. We want to strictly avoid duplicating the same pictures across different pages, so we had a thought: could we perhaps take one of the event images and use it as a highly opaque, faded background graphic? It might add some visual texture without cluttering the page. We are very open to your professional suggestions on how best to handle the imagery while keeping the design clean and effective.
+
+Language, Tone and Our Staffing Model: We want to heavily emphasise the overall language of the site. It is absolutely vital that we do not come across as arrogant. We need to be transparent about how we operate without making grand, boastful claims. Please ensure the copy reflects our actual operational model, using the following phrasing: "All of our personnel operate on a self-employed basis. Because of this, our exact pool of active staff naturally changes and remains subject to individual availability and prior commitments." This highlights our adaptability whilst remaining completely grounded.
+
+Staff Recruitment, Vetting & Accountability: We need to clarify the calibre of our personnel. Please make it clear that our SIA staff are experienced professionals, rather than individuals who are fresh into the industry or simply 'badge holders'. More broadly, our staff generally come to us through personal recommendations or because we have approached them directly. We personally vet our team, actively follow up on references, and seek the opinions of trusted industry colleagues. We are honest enough to admit that no system is absolutely perfect and, like anyone, we can make mistakes. However, we work diligently to keep these to an absolute minimum and are committed to rectifying any issues as quickly as possible.
+
+Hands-On Leadership: It is also worth highlighting our personal investment in the service. As the co-owners of the business, Sid and I usually work on the ground at the events ourselves, acting either as team leads or as additional staff. Please note that this is always dependent on our availability and other commitments, but it underlines our hands-on approach.
+
+Managing Staffing Expectations: Leading on from the above, please ensure we set clear and realistic expectations regarding the size of the teams we can provide. We can supply anywhere from a core team of two up to around thirty personnel for an event. However, please ensure it is clearly stated that this is always subject to our other commitments and staff availability.
+
+Team Experience and Maturity: We want to subtly convey that the vast majority of our team consists of mature, experienced professionals (most being over the age of 30). However, for obvious legal and equal-opportunity reasons, we must be incredibly careful how this is worded. Please ensure the copy highlights our team's "wealth of life experience", "maturity", and "seasoned professional background" without explicitly stating an age limit.
+
+Pricing and Fair Pay: We need to make our stance on pricing clear in the copy. We are not interested in a "race to the bottom" on price. We are committed to paying our staff exactly what they are worth, which means we will not be the cheapest option on the market, nor do we plan to be. However, our pricing will always be completely fair.
+
+Clinical Scope (CQC & Conveyance): It is incredibly important that we are transparent about our clinical scope. Please explicitly state on the site that we are not CQC-registered and we do not offer patient conveyance. Instead, frame this positively by explaining that we work closely alongside trusted CQC-registered providers. We never want to overstate our own clinical capacity.
+
+Qualifications and Fire Safety: Please ensure our qualifications are accurately represented, specifically using this wording: "As co-owners, Sid and Andy both hold a wide variety of professional and industry-recognised qualifications. Specifically regarding health, safety, and fire safety, Andy holds a NEBOSH certification, ensuring EMT Services brings director-level qualification to this critical area."
+
+Risk Assessments and Method Statements (RAMS): Please ensure the copy does not state that we "produce full Event Risk Assessments and Method Statements (RAMS) as standard — not as an add-on". We are not keen on phrasing it this way, as it sets the wrong expectation.
+
+Showcasing Our Work: There is a line on the site that currently reads, "We do not pick and choose what to show based on scale". This doesn't quite make sense. Please replace it with: "We are entirely transparent about the work we do, proudly showcasing our events regardless of the size or scale of the occasion."
+
+Button Terminology: We need to remove the "speed button" label. Please replace it with more accurate, industry-standard terminology that clearly directs the client. Something like "Request Cover", "Enquire Now", or "Contact the Team" would be far more appropriate.
+
+Wording Adjustments: We would like to completely remove the words "deployment" and "deploy" from the copy. It can sound a bit too heavy. Instead, let's shift the focus toward community engagement—perhaps pointing them to "follow us on socials" or similar phrasing.
+
+Live Google Reviews: Trust is everything in our line of work. To that end, please set up a dynamic feed to pull actual, live reviews directly from our Google Reviews profile. It is crucial that we display genuine client feedback rather than relying on any static, computer-generated text.
+
+Driving Website Engagement & Branding: We need to actively encourage visitors to use and reference the website as a core resource. Please review the overall layout with the user journey in mind. Alongside this, take a critical look at our logo placement—it needs to stand out effectively and anchor the brand.
+
+Response Times: Please update our stated contact response time to simply say that we will get back to emails "as soon as possible" (ASAP). Please remove the phrase "We aim to respond to all enquiries within one working day", as we want to assure clients we will reply as quickly as we physically can.
+
+Contact Form & Email Infrastructure: For the contact forms, please ensure all submissions are routed to info@emtservices.uk. As long as they go to that address, we will receive them seamlessly through our Google Workspace setup. Additionally, please implement a CAPTCHA or a similar robust anti-spam measure on the form to help filter out junk emails.
+
+Please let me know if you need any clarification on these points, or if you have any design suggestions on how best to implement them.

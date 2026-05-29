@@ -91,7 +91,7 @@ export default function Contact() {
                   <a href="mailto:info@emtservices.uk" className="text-xl font-semibold text-white hover:underline">
                     info@emtservices.uk
                   </a>
-                  <p className="text-white/70 mt-2">We aim to respond to all enquiries within one working day.</p>
+                  <p className="text-white/70 mt-2">We will get back to you as soon as possible.</p>
                 </div>
               </div>
             </div>
@@ -104,7 +104,7 @@ export default function Contact() {
                 <CheckCircle2 className="w-16 h-16 text-green-500" />
                 <h3 className="text-2xl font-bold">Enquiry Received</h3>
                 <p className="text-muted-foreground max-w-sm">
-                  Thank you. One of the directors will review your requirements and be in touch within one working day.
+                  Thank you. One of the directors will review your requirements and be in touch as soon as possible.
                 </p>
               </div>
             ) : (

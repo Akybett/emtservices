@@ -3,6 +3,7 @@ import Hero from "@/components/Hero";
 import Services from "@/components/Services";
 import Foundations from "@/components/Foundations";
 import Trust from "@/components/Trust";
+import FAQ from "@/components/FAQ";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
@@ -15,6 +16,7 @@ export default function Home() {
         <Services />
         <Foundations />
         <Trust />
+        <FAQ />
         <Contact />
       </main>
       <Footer />

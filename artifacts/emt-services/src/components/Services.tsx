@@ -20,7 +20,7 @@ const services = [
   },
   {
     title: "Fire Safety Operations",
-    description: "Fire safety planning and on-site compliance, structured in accordance with current legislation and industry guidance. Our directors hold NEBOSH qualifications — a gold-standard credential in occupational health, safety, and risk management — and apply that expertise to every event we cover.",
+    description: "Fire safety planning and on-site compliance, structured in accordance with current legislation and industry guidance. Andy holds a NEBOSH certification — a gold-standard credential in occupational health, safety, and risk management — ensuring director-level qualification is applied to every event we cover.",
     icon: Flame,
   }
 ];

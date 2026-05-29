@@ -13,11 +13,11 @@ const points = [
   },
   {
     title: "Qualified at Director Level",
-    description: "Both directors hold NEBOSH qualifications — a gold-standard credential in occupational health, safety, and risk management. We are also registered trainers for Highfield and Pro Trainings, and members of the Association of Healthcare Trainers (AOHT). This is offered as reassurance, not as a boast."
+    description: "As co-owners, Sid and Andy both hold a wide variety of professional and industry-recognised qualifications. Specifically regarding health, safety, and fire safety, Andy holds a NEBOSH certification, ensuring EMT Services brings director-level qualification to this critical area. Both directors are also registered trainers for Highfield and Pro Trainings, and members of the Association of Healthcare Trainers (AOHT). This is offered as reassurance, not as a boast."
   },
   {
     title: "Directors on the Ground",
-    description: "As co-owners, Alan and Andy typically work on the ground at events themselves — either as team leads or as additional personnel. This is always subject to our availability and other commitments, but it reflects the hands-on approach that has been central to how we have operated throughout our careers."
+    description: "As co-owners, Sid and Andy typically work on the ground at events themselves — either as team leads or as additional personnel. This is always subject to our availability and other commitments, but it reflects the hands-on approach that has been central to how we have operated throughout our careers."
   },
   {
     title: "Experienced, Seasoned Teams",
