@@ -80,7 +80,7 @@ export default function Foundations() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {points.map((point, index) => (
             <motion.div
               key={index}
@@ -88,17 +88,19 @@ export default function Foundations() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.5, delay: index * 0.08 }}
-              className="flex items-start space-x-4"
+              className="h-full rounded-2xl border border-border bg-card/80 backdrop-blur-sm p-6 hover:border-primary/40 hover:shadow-md transition-all duration-300"
             >
-              <div className="flex-shrink-0 mt-1">
-                <CheckCircle2 className="w-6 h-6 text-primary" />
+              <div className="flex items-center gap-3 mb-3">
+                <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
+                  <CheckCircle2 className="w-5 h-5 text-primary" />
+                </div>
+                <h3 className="text-lg font-bold text-foreground leading-tight">
+                  {point.title}
+                </h3>
               </div>
-              <div>
-                <h3 className="text-xl font-bold text-foreground mb-2">{point.title}</h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  {point.description}
-                </p>
-              </div>
+              <p className="text-muted-foreground leading-relaxed text-[15px]">
+                {point.description}
+              </p>
             </motion.div>
           ))}
         </div>
