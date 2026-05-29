@@ -10,7 +10,7 @@ const services = [
   {
     title: "SIA-Licensed Security",
     description:
-      "Our SIA-licensed security personnel are experienced professionals — not individuals fresh to the industry or simply 'badge holders'. Our team is built through personal recommendations and direct approaches from trusted colleagues. Every operative is personally vetted by the directors, with references actively followed up before anyone is placed on an event.",
+      "Our SIA-licensed security personnel are experienced professionals with genuine operational background. Our team is built through personal recommendations and direct approaches from trusted colleagues. Every operative is personally vetted by the directors, with references actively followed up before anyone is placed on an event.",
     icon: ShieldCheck,
     image: securityImg,
     imageAlt:

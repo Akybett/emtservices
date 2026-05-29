@@ -17,7 +17,7 @@ const faqs = [
   },
   {
     question: "How do you source and vet your staff?",
-    answer: "We bring in vetted specialists for each event rather than holding a large permanent roster. Most of our team comes to us through personal recommendations or direct approaches from trusted industry colleagues. Every operative is personally assessed by the directors before placement, with references actively followed up. Our SIA-licensed staff are experienced professionals — not individuals who are new to the industry.",
+    answer: "We bring in vetted specialists for each event rather than holding a large permanent roster. Most of our team comes to us through personal recommendations or direct approaches from trusted industry colleagues. Every operative is personally assessed by the directors before placement, with references actively followed up. Our SIA-licensed staff are experienced professionals with genuine operational background.",
   },
   {
     question: "Will the directors actually be at my event?",
@@ -33,7 +33,7 @@ const faqs = [
   },
   {
     question: "Will you always be the cheapest option?",
-    answer: "No, and we do not intend to be. We pay our staff exactly what they are worth, and that is reflected in what we charge. We are not interested in a race to the bottom on price. What we do offer is a fair, transparent cost for a genuinely professional service delivered by people who are accountable for the result.",
+    answer: "Probably not, and we are upfront about that. We pay our staff fairly for the skill and experience they bring, and that is reflected in what we charge. What we offer is a fair, transparent cost for a professional service delivered by people who are accountable for the result.",
   },
   {
     question: "What areas of the UK do you cover?",

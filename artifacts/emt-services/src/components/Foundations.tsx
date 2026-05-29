@@ -25,7 +25,7 @@ const points = [
   },
   {
     title: "Vetting & Accountability",
-    description: "Our team is built through personal recommendations and direct approaches — not agency pools. We personally vet every operative, actively follow up references, and consult trusted industry colleagues. Our SIA staff are seasoned professionals with real operational experience, not individuals who are new to the industry."
+    description: "Our team is built through personal recommendations and direct approaches — not agency pools. We personally vet every operative, actively follow up references, and consult trusted industry colleagues. Our SIA staff are seasoned professionals with real operational experience."
   },
   {
     title: "Qualified at Director Level",
@@ -41,7 +41,7 @@ const points = [
   },
   {
     title: "Pricing & Fair Pay",
-    description: "We are not interested in competing on price alone. We pay our staff exactly what they are worth, and that is reflected in what we charge. We will never be the cheapest option in the market, nor do we intend to be — but our pricing will always be completely fair and transparent."
+    description: "We are not interested in competing on price alone. We pay our staff fairly for the skill and experience they bring, and that is reflected in what we charge. We are unlikely to be the cheapest option — but our pricing will always be fair, transparent, and clearly explained."
   },
   {
     title: "We Work to the Guides",
