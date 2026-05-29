@@ -15,6 +15,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useSubmitContact } from "@workspace/api-client-react";
+import emblem from "@assets/Transparent-icon_1780050423852.png";
 
 const formSchema = z.object({
   fullName: z.string().min(2, "Full name is required"),
@@ -69,8 +70,16 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" className="py-24 bg-primary text-primary-foreground">
-      <div className="container mx-auto px-4 md:px-6">
+    <section id="contact" className="relative py-24 bg-primary text-primary-foreground overflow-hidden">
+      {/* Brand emblem watermark */}
+      <img
+        src={emblem}
+        alt=""
+        aria-hidden="true"
+        className="pointer-events-none select-none absolute -right-16 -bottom-16 w-80 md:w-[28rem] opacity-[0.04]"
+        style={{ filter: "brightness(0) invert(1)" }}
+      />
+      <div className="container relative z-10 mx-auto px-4 md:px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
           {/* Left: Info */}
           <div>
