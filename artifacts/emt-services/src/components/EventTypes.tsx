@@ -3,6 +3,8 @@ import { Music2, Flame, Users, Shield, PartyPopper, Building2, TreePine, Sparkle
 
 const eventTypes = [
   { label: "Music Festivals", icon: Music2 },
+  { label: "Cultural Events", icon: Sparkles },
+  { label: "Carnivals & Parades", icon: PartyPopper },
   { label: "Castle & Estate Events", icon: Building2 },
   { label: "Fireworks Displays", icon: Sparkles },
   { label: "Outdoor Concerts", icon: Music2 },
@@ -39,7 +41,13 @@ export default function EventTypes() {
           ))}
         </div>
 
-        <p className="text-center text-white/40 text-sm mt-8">
+        <p className="text-center text-white/60 mt-10 max-w-2xl mx-auto">
+          Among the events we have been proud to support are cultural occasions such as the{" "}
+          <span className="font-semibold text-white">Lammas Festival</span> and{" "}
+          <span className="font-semibold text-white">Eastbourne Carnival</span>.
+        </p>
+
+        <p className="text-center text-white/40 text-sm mt-4">
           Not sure if your event fits? <a href="#contact" onClick={(e) => { e.preventDefault(); document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" }); }} className="text-white/60 hover:text-white underline underline-offset-2 transition-colors">Get in touch</a> — we will tell you honestly whether we are the right fit.
         </p>
       </div>
