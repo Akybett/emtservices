@@ -7,6 +7,7 @@ const eventTypes = [
   { label: "Carnivals & Parades", icon: PartyPopper },
   { label: "Pride Events", icon: Heart },
   { label: "Rockabilly Events", icon: Music2 },
+  { label: "Camping Shows", icon: TreePine },
   { label: "Castle & Estate Events", icon: Building2 },
   { label: "Fireworks Displays", icon: Sparkles },
   { label: "Outdoor Concerts", icon: Music2 },
