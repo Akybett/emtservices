@@ -30,7 +30,10 @@ interface RecaptchaVerifyResult {
 
 // Verifies a reCAPTCHA v3 token with Google. When no secret is configured,
 // verification is skipped so the form keeps working (graceful degradation).
-async function verifyRecaptcha(token: string | undefined): Promise<RecaptchaVerifyResult> {
+async function verifyRecaptcha(
+  token: string | undefined,
+  expectedAction: string,
+): Promise<RecaptchaVerifyResult> {
   const secret = process.env.RECAPTCHA_SECRET_KEY;
   if (!secret) return { ok: true };
 
@@ -55,6 +58,11 @@ async function verifyRecaptcha(token: string | undefined): Promise<RecaptchaVeri
 
     if (!result.success) {
       return { ok: false, reason: (result["error-codes"] ?? ["failed"]).join(",") };
+    }
+    // Bind the token to the action it was generated for (prevents token reuse
+    // from other reCAPTCHA-protected actions on the same site key).
+    if (result.action && result.action !== expectedAction) {
+      return { ok: false, reason: `action-mismatch-${result.action}` };
     }
     if (typeof result.score === "number" && result.score < RECAPTCHA_MIN_SCORE) {
       return { ok: false, reason: `low-score-${result.score}` };
@@ -137,7 +145,7 @@ router.post("/contact", async (req, res) => {
   const { fullName, email, eventDate, eventLocation, servicesRequired, recaptchaToken } = parsed.data;
 
   // Invisible reCAPTCHA v3 check (skipped automatically when not configured).
-  const captcha = await verifyRecaptcha(recaptchaToken);
+  const captcha = await verifyRecaptcha(recaptchaToken, "contact_submit");
   if (!captcha.ok) {
     req.log.warn({ reason: captcha.reason }, "reCAPTCHA verification failed — rejecting submission");
     res.status(400).json({

@@ -27,7 +27,12 @@ function loadScript(siteKey: string): Promise<void> {
     script.async = true;
     script.defer = true;
     script.onload = () => resolve();
-    script.onerror = () => reject(new Error("Failed to load reCAPTCHA"));
+    script.onerror = () => {
+      // Allow a retry on the next attempt instead of caching the failure.
+      scriptPromise = null;
+      script.remove();
+      reject(new Error("Failed to load reCAPTCHA"));
+    };
     document.head.appendChild(script);
   });
 

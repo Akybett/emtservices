@@ -101,6 +101,9 @@ components:
         recaptchaToken:
           type: string
           description: Google reCAPTCHA v3 token, verified server-side when configured
+        website:
+          type: string
+          description: Honeypot field — must be empty; bots that fill it are rejected
       required:
         - fullName
         - email

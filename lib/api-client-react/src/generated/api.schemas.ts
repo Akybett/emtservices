@@ -20,6 +20,8 @@ export interface ContactRequest {
   servicesRequired: string;
   /** Google reCAPTCHA v3 token, verified server-side when configured */
   recaptchaToken?: string;
+  /** Honeypot field — must be empty; bots that fill it are rejected */
+  website?: string;
 }
 
 export interface ContactResponse {

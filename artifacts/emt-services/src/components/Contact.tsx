@@ -66,9 +66,9 @@ export default function Contact() {
 
   async function onSubmit(data: FormValues) {
     setServerError(null);
-    const { website: _honeypot, ...payload } = data;
     const recaptchaToken = await getRecaptchaToken("contact_submit");
-    submitContact({ data: { ...payload, recaptchaToken } });
+    // Send the honeypot field as-is so the server can reject bot submissions.
+    submitContact({ data: { ...data, recaptchaToken } });
   }
 
   return (

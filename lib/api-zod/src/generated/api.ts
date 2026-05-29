@@ -35,7 +35,8 @@ export const SubmitContactBody = zod.object({
   "eventDate": zod.string(),
   "eventLocation": zod.string().min(submitContactBodyEventLocationMin),
   "servicesRequired": zod.string().min(submitContactBodyServicesRequiredMin),
-  "recaptchaToken": zod.string().optional().describe('Google reCAPTCHA v3 token, verified server-side when configured')
+  "recaptchaToken": zod.string().optional().describe('Google reCAPTCHA v3 token, verified server-side when configured'),
+  "website": zod.string().optional().describe('Honeypot field — must be empty; bots that fill it are rejected')
 })
 
 export const SubmitContactResponse = zod.object({
