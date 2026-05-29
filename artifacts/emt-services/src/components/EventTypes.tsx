@@ -43,8 +43,25 @@ export default function EventTypes() {
 
         <p className="text-center text-white/60 mt-10 max-w-2xl mx-auto">
           Among the events we have been proud to support are cultural occasions such as the{" "}
-          <span className="font-semibold text-white">Lammas Festival</span> and{" "}
-          <span className="font-semibold text-white">Eastbourne Carnival</span>.
+          <span className="font-semibold text-white">Lammas Festival</span>,{" "}
+          <a
+            href="https://www.eastbournecarnival.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-semibold text-white underline underline-offset-2 hover:text-white/80 transition-colors"
+          >
+            Eastbourne Carnival
+          </a>
+          , and{" "}
+          <a
+            href="https://www.eastbourne-pride.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-semibold text-white underline underline-offset-2 hover:text-white/80 transition-colors"
+          >
+            Eastbourne Pride
+          </a>
+          .
         </p>
 
         <p className="text-center text-white/40 text-sm mt-4">
