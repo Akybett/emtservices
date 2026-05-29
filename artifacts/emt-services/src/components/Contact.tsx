@@ -97,7 +97,7 @@ export default function Contact() {
             <div className="w-20 h-1 bg-white/20 mb-8"></div>
 
             <p className="text-lg text-white/80 mb-12 max-w-md">
-              You will hear back from one of the directors directly — not a sales team. Fill in what you can — including a phone number and the best time to reach you if you would prefer a call — and we will give you an honest assessment of what your event requires and whether we are the right fit.
+              You will hear back from one of the directors directly — not a sales team. We always love to sit down and discuss your needs, see where we can help, and suggest ideas. Fill in what you can — including a phone number and the best time to reach you if you would prefer a call — and we will give you an honest assessment of what your event requires and whether we are the right fit.
             </p>
 
             <div className="space-y-8">
