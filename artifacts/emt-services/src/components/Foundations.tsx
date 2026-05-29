@@ -1,6 +1,14 @@
 import { motion } from "framer-motion";
-import { CheckCircle2 } from "lucide-react";
+import { CheckCircle2, HeartPulse } from "lucide-react";
 import bgImg from "@assets/PXL_20250822_173135757_1779997274807.jpg";
+import aohtLogo from "@assets/AoHT-Member-Logo_1780063205128.png";
+
+const accreditations = [
+  "NEBOSH Certified (Director Level)",
+  "Highfield Registered Trainers",
+  "Pro Trainings Registered Trainers",
+  "ICO Registered",
+];
 
 const points = [
   {
@@ -86,6 +94,46 @@ export default function Foundations() {
             </motion.div>
           ))}
         </div>
+
+        {/* Memberships & Accreditations */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.5 }}
+          className="mt-20 pt-12 border-t border-border/60"
+        >
+          <h3 className="text-center text-sm font-semibold text-muted-foreground uppercase tracking-wider mb-8">
+            Memberships &amp; Accreditations
+          </h3>
+          <div className="flex flex-wrap items-center justify-center gap-4 md:gap-6">
+            {/* AoHT membership — official logo */}
+            <div className="bg-white rounded-xl border border-border shadow-sm p-4 flex items-center justify-center h-24 w-40">
+              <img
+                src={aohtLogo}
+                alt="Association of Healthcare Trainers — Member"
+                className="max-h-full max-w-full object-contain"
+              />
+            </div>
+
+            {/* ResusReady credential */}
+            <div className="bg-white rounded-xl border border-border shadow-sm p-4 flex flex-col items-center justify-center h-24 w-40 text-center">
+              <HeartPulse className="w-7 h-7 text-primary mb-1" />
+              <span className="text-sm font-bold text-foreground leading-tight">ResusReady</span>
+              <span className="text-[11px] text-muted-foreground mt-0.5">Membership RR-715313</span>
+            </div>
+
+            {/* Text-based accreditations */}
+            {accreditations.map((item) => (
+              <div
+                key={item}
+                className="bg-white rounded-xl border border-border shadow-sm px-5 flex items-center justify-center h-24 w-40 text-center"
+              >
+                <span className="text-sm font-semibold text-foreground leading-snug">{item}</span>
+              </div>
+            ))}
+          </div>
+        </motion.div>
       </div>
     </section>
   );
