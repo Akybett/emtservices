@@ -1,9 +1,10 @@
 import { motion } from "framer-motion";
-import { CheckCircle2, HeartPulse, ShieldCheck } from "lucide-react";
+import { CheckCircle2, HeartPulse } from "lucide-react";
 import bgImg from "@assets/PXL_20250822_173135757_1779997274807.jpg";
 import aohtLogo from "@assets/AoHT-Member-Logo_1780063205128.png";
 import proTrainingsLogo from "@assets/ProTrainings_Logo_-_stacked_(RGB)_1780063367815.png";
 import highfieldLogo from "@assets/HG_Logo_1780063421961.png";
+import icoLogo from "@assets/kisspng-information-commissioner-s-office-united-kingdom-m-5b1_1780063529160.jpg";
 
 const logoAccreditations = [
   {
@@ -141,11 +142,13 @@ export default function Foundations() {
               </div>
             ))}
 
-            {/* ICO registration */}
-            <div className="bg-white rounded-xl border border-border shadow-sm p-4 flex flex-col items-center justify-center h-24 w-40 text-center">
-              <ShieldCheck className="w-7 h-7 text-primary mb-1" />
-              <span className="text-sm font-bold text-foreground leading-tight">ICO Registered</span>
-              <span className="text-[11px] text-muted-foreground mt-0.5">Data Protection</span>
+            {/* ICO registration — official logo */}
+            <div className="bg-white rounded-xl border border-border shadow-sm p-4 flex items-center justify-center h-24 w-40">
+              <img
+                src={icoLogo}
+                alt="Information Commissioner's Office — Registered"
+                className="max-h-16 max-w-full object-contain"
+              />
             </div>
           </div>
         </motion.div>
