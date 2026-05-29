@@ -2,7 +2,6 @@ import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
 import Services from "@/components/Services";
 import EventTypes from "@/components/EventTypes";
-import Leadership from "@/components/Leadership";
 import Foundations from "@/components/Foundations";
 import Trust from "@/components/Trust";
 import FAQ from "@/components/FAQ";
@@ -17,7 +16,6 @@ export default function Home() {
         <Hero />
         <Services />
         <EventTypes />
-        <Leadership />
         <Foundations />
         <Trust />
         <FAQ />
