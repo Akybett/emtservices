@@ -14,7 +14,7 @@ const eventTypes = [
   { label: "Community Fêtes", icon: PartyPopper },
   { label: "Corporate Events", icon: Building2 },
   { label: "Charity Events", icon: Users },
-  { label: "Indoor Raves", icon: Flame },
+  { label: "Historical Events", icon: Building2 },
   { label: "Country Fairs", icon: TreePine },
   { label: "Sporting Events", icon: Shield },
 ];
