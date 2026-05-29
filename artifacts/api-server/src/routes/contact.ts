@@ -1,33 +1,76 @@
 import { Router, type IRouter } from "express";
-import nodemailer from "nodemailer";
+// Gmail integration via Replit connector (google-mail).
+// Sends contact-form enquiries straight to the company inbox.
+import { ReplitConnectors } from "@replit/connectors-sdk";
 import { z } from "zod";
 
 const router: IRouter = Router();
 
+const connectors = new ReplitConnectors();
+
+// Reject CR/LF to prevent email header injection in fields used in the Subject.
+const noNewlines = (v: string) => !/[\r\n]/.test(v);
+
 const ContactSchema = z.object({
-  fullName: z.string().min(2),
-  email: z.string().email(),
-  eventDate: z.string().min(1),
-  eventLocation: z.string().min(2),
-  servicesRequired: z.string().min(10),
+  fullName: z.string().min(2).max(120).refine(noNewlines, "Invalid characters"),
+  email: z.string().email().max(254),
+  eventDate: z.string().min(1).max(60).refine(noNewlines, "Invalid characters"),
+  eventLocation: z.string().min(2).max(160).refine(noNewlines, "Invalid characters"),
+  servicesRequired: z.string().min(10).max(5000),
 });
 
-function createTransport() {
-  const host = process.env.SMTP_HOST;
-  const user = process.env.SMTP_USER;
-  const pass = process.env.SMTP_PASS;
-  const port = parseInt(process.env.SMTP_PORT ?? "587", 10);
+function encodeHeader(value: string): string {
+  // RFC 2047 encoded-word for any non-ASCII characters in headers.
+  if (/^[\x00-\x7F]*$/.test(value)) return value;
+  return `=?UTF-8?B?${Buffer.from(value, "utf-8").toString("base64")}?=`;
+}
 
-  if (!host || !user || !pass) {
-    return null;
-  }
+function escapeHtml(value: string): string {
+  return value
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
 
-  return nodemailer.createTransport({
-    host,
-    port,
-    secure: port === 465,
-    auth: { user, pass },
-  });
+function buildRawMessage(opts: {
+  to: string;
+  from: string;
+  replyTo: string;
+  subject: string;
+  html: string;
+  text: string;
+}): string {
+  const boundary = `b_${Date.now().toString(36)}_${Math.random().toString(36).slice(2)}`;
+  const lines = [
+    `From: ${opts.from}`,
+    `To: ${opts.to}`,
+    `Reply-To: ${opts.replyTo}`,
+    `Subject: ${encodeHeader(opts.subject)}`,
+    "MIME-Version: 1.0",
+    `Content-Type: multipart/alternative; boundary="${boundary}"`,
+    "",
+    `--${boundary}`,
+    "Content-Type: text/plain; charset=UTF-8",
+    "Content-Transfer-Encoding: base64",
+    "",
+    Buffer.from(opts.text, "utf-8").toString("base64"),
+    "",
+    `--${boundary}`,
+    "Content-Type: text/html; charset=UTF-8",
+    "Content-Transfer-Encoding: base64",
+    "",
+    Buffer.from(opts.html, "utf-8").toString("base64"),
+    "",
+    `--${boundary}--`,
+    "",
+  ];
+  return Buffer.from(lines.join("\r\n"), "utf-8")
+    .toString("base64")
+    .replace(/\+/g, "-")
+    .replace(/\//g, "_")
+    .replace(/=+$/, "");
 }
 
 router.post("/contact", async (req, res) => {
@@ -48,6 +91,15 @@ router.post("/contact", async (req, res) => {
   const { fullName, email, eventDate, eventLocation, servicesRequired } = parsed.data;
   const toAddress = process.env.CONTACT_EMAIL ?? "info@emtservices.uk";
 
+  // Escape all user-supplied content before embedding in the HTML email body.
+  const safe = {
+    fullName: escapeHtml(fullName),
+    email: escapeHtml(email),
+    eventDate: escapeHtml(eventDate),
+    eventLocation: escapeHtml(eventLocation),
+    servicesRequired: escapeHtml(servicesRequired),
+  };
+
   const htmlBody = `
     <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
       <h2 style="color: #1e293b; border-bottom: 2px solid #1e293b; padding-bottom: 8px;">
@@ -56,26 +108,26 @@ router.post("/contact", async (req, res) => {
       <table style="width: 100%; border-collapse: collapse; margin-top: 16px;">
         <tr>
           <td style="padding: 8px 0; font-weight: bold; color: #475569; width: 160px;">Name</td>
-          <td style="padding: 8px 0; color: #1e293b;">${fullName}</td>
+          <td style="padding: 8px 0; color: #1e293b;">${safe.fullName}</td>
         </tr>
         <tr style="background: #f8fafc;">
           <td style="padding: 8px 4px; font-weight: bold; color: #475569;">Reply-To Email</td>
           <td style="padding: 8px 4px; color: #1e293b;">
-            <a href="mailto:${email}" style="color: #1d4ed8;">${email}</a>
+            <a href="mailto:${safe.email}" style="color: #1d4ed8;">${safe.email}</a>
           </td>
         </tr>
         <tr>
           <td style="padding: 8px 0; font-weight: bold; color: #475569;">Event Date</td>
-          <td style="padding: 8px 0; color: #1e293b;">${eventDate}</td>
+          <td style="padding: 8px 0; color: #1e293b;">${safe.eventDate}</td>
         </tr>
         <tr style="background: #f8fafc;">
           <td style="padding: 8px 4px; font-weight: bold; color: #475569;">Event Location</td>
-          <td style="padding: 8px 4px; color: #1e293b;">${eventLocation}</td>
+          <td style="padding: 8px 4px; color: #1e293b;">${safe.eventLocation}</td>
         </tr>
       </table>
       <div style="margin-top: 20px;">
         <p style="font-weight: bold; color: #475569; margin-bottom: 8px;">Services Required / Details</p>
-        <div style="background: #f8fafc; border-left: 4px solid #1e293b; padding: 12px 16px; color: #1e293b; white-space: pre-wrap;">${servicesRequired}</div>
+        <div style="background: #f8fafc; border-left: 4px solid #1e293b; padding: 12px 16px; color: #1e293b; white-space: pre-wrap;">${safe.servicesRequired}</div>
       </div>
       <p style="margin-top: 24px; font-size: 12px; color: #94a3b8;">
         Sent from the EMT Services website contact form.
@@ -95,30 +147,44 @@ Services Required / Details:
 ${servicesRequired}
   `.trim();
 
-  const transport = createTransport();
-
-  if (!transport) {
-    req.log.warn("SMTP not configured — logging enquiry to console");
-    req.log.info({ enquiry: parsed.data }, "Contact form submission (no SMTP)");
-    res.json({ success: true, message: "Enquiry received." });
-    return;
-  }
+  const raw = buildRawMessage({
+    to: toAddress,
+    from: toAddress,
+    replyTo: email,
+    subject: `New Enquiry: ${fullName} — ${eventLocation} (${eventDate})`,
+    html: htmlBody,
+    text: textBody,
+  });
 
   try {
-    await transport.sendMail({
-      from: `"EMT Services Website" <${process.env.SMTP_USER}>`,
-      to: toAddress,
-      replyTo: email,
-      subject: `New Enquiry: ${fullName} — ${eventLocation} (${eventDate})`,
-      text: textBody,
-      html: htmlBody,
-    });
+    const response = await connectors.proxy(
+      "google-mail",
+      "/gmail/v1/users/me/messages/send",
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ raw }),
+      },
+    );
 
-    req.log.info({ to: toAddress, from: email }, "Contact enquiry email sent");
+    if (!response.ok) {
+      const detail = await response.text();
+      req.log.error({ status: response.status, detail }, "Gmail send failed");
+      res.status(502).json({
+        error:
+          "We could not send your enquiry at this time. Please email us directly at info@emtservices.uk",
+      });
+      return;
+    }
+
+    req.log.info({ to: toAddress, from: email }, "Contact enquiry email sent via Gmail");
     res.json({ success: true, message: "Enquiry received." });
   } catch (err) {
     req.log.error({ err }, "Failed to send contact email");
-    res.status(500).json({ error: "We could not send your enquiry at this time. Please email us directly at info@emtservices.uk" });
+    res.status(500).json({
+      error:
+        "We could not send your enquiry at this time. Please email us directly at info@emtservices.uk",
+    });
   }
 });
 
