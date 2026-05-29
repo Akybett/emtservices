@@ -5,7 +5,7 @@ import { useGetReviews } from "@workspace/api-client-react";
 
 import djConcertImg from "@assets/PXL_20230701_213226230_1779997274809.jpg";
 import festivalCrowdImg from "@assets/PXL_20250822_173135757_1779997274807.jpg";
-import manorHouseImg from "@assets/PXL_20250627_190937580_1779997274808.jpg";
+import castleImg from "@assets/IMG_20260503_160246_1780012947272.jpg";
 import fireworksImg from "@assets/PXL_20241108_194503905.RESTORED_1779997274806.jpg";
 import bigTopImg from "@assets/leeds-festival_(1)_1779997274806.jpg";
 import indoorVenueImg from "@assets/PXL_20251004_024016677_1779997274807.jpg";
@@ -13,7 +13,7 @@ import indoorVenueImg from "@assets/PXL_20251004_024016677_1779997274807.jpg";
 const galleryImages = [
   { src: djConcertImg, alt: "Outdoor concert stage with DJ performing to a crowd", caption: "Camper Marmalade" },
   { src: festivalCrowdImg, alt: "Open-air festival crowd at a summer event", caption: "Open-Air Festival" },
-  { src: manorHouseImg, alt: "Event at a historic manor house with crowd on lawn", caption: "Estate Event" },
+  { src: castleImg, alt: "Herstmonceux Castle with moat on a sunny day — venue for an EMT Services event", caption: "Herstmonceux Castle" },
   { src: fireworksImg, alt: "Emergency ambulance on standby at a fireworks display", caption: "Fireworks Display" },
   { src: bigTopImg, alt: "Festival big-top tents at a summer music event", caption: "Summer Festival" },
   { src: indoorVenueImg, alt: "Indoor venue with stage lighting", caption: "Indoor Rave" },

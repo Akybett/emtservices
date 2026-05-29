@@ -1,27 +1,37 @@
 import { motion } from "framer-motion";
 import { ShieldCheck, HeartPulse, Users, Flame } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import securityImg from "@assets/690691086_122175045026935652_6242328256642375166_n_1780012979478.jpg";
+import medicalImg from "@assets/ReLens_Image_2024-09-07_12_55_36_1999x1953~2_1780012979478.jpg";
 
 const services = [
   {
     title: "SIA-Licensed Security",
     description: "Our SIA-licensed security personnel are experienced professionals — not individuals fresh to the industry or simply 'badge holders'. Our team is built through personal recommendations and direct approaches from trusted colleagues. Every operative is personally vetted by the directors, with references actively followed up before anyone is placed on an event.",
     icon: ShieldCheck,
+    image: securityImg,
+    imageAlt: "EMT Services security team in purple hi-vis on the grounds of Herstmonceux Castle",
   },
   {
     title: "Medical & First Aid Cover",
     description: "We provide on-site medical planning and first aid cover. We are not CQC-registered and do not offer patient conveyance. For events requiring clinical or ambulance provision, we work closely alongside trusted CQC-registered providers to ensure the right level of care is in place. We will never overstate our own clinical capacity.",
     icon: HeartPulse,
+    image: medicalImg,
+    imageAlt: "EMT Services Rescue and Medical Unit vehicle on standby at an outdoor event",
   },
   {
     title: "Professional Stewarding",
     description: "We bring in specialist stewards for each event rather than maintaining a permanent roster. This keeps us flexible and ensures the right personnel are matched to the right event. Our stewards come to us through personal recommendation and are vetted directly — not sourced from an agency pool.",
     icon: Users,
+    image: null,
+    imageAlt: "",
   },
   {
     title: "Fire Safety Operations",
     description: "Fire safety planning and on-site compliance, structured in accordance with current legislation and industry guidance. Andy holds a NEBOSH certification — a gold-standard credential in occupational health, safety, and risk management — ensuring director-level qualification is applied to every event we cover.",
     icon: Flame,
+    image: null,
+    imageAlt: "",
   }
 ];
 
@@ -38,7 +48,7 @@ const itemVariants = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.6, ease: "easeOut" }
+    transition: { duration: 0.6, ease: "easeOut" as const }
   }
 };
 
@@ -64,6 +74,16 @@ export default function Services() {
           {services.map((service, index) => (
             <motion.div key={index} variants={itemVariants}>
               <Card className="h-full border-border bg-card hover:border-primary/50 transition-colors duration-300 overflow-hidden">
+                {service.image && (
+                  <div className="relative w-full h-44 overflow-hidden">
+                    <img
+                      src={service.image}
+                      alt={service.imageAlt}
+                      className="w-full h-full object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-b from-transparent to-card/60" />
+                  </div>
+                )}
                 <CardHeader>
                   <div className="w-14 h-14 rounded-lg bg-primary/10 flex items-center justify-center mb-4 text-primary">
                     <service.icon className="w-7 h-7" />
