@@ -6,18 +6,17 @@ import proTrainingsLogo from "@assets/ProTrainings_Logo_-_stacked_(RGB)_17800633
 import highfieldLogo from "@assets/HG_Logo_1780063421961.png";
 import icoLogo from "@assets/kisspng-information-commissioner-s-office-united-kingdom-m-5b1_1780063529160.jpg";
 
-const logoAccreditations = [
+const credentials = [
+  { src: aohtLogo, alt: "Association of Healthcare Trainers — Member", imgClass: "max-h-14" },
+  { src: proTrainingsLogo, alt: "ProTrainings — Registered Trainers", imgClass: "max-h-16" },
+  { src: highfieldLogo, alt: "Highfield — Registered Trainers", imgClass: "max-h-7" },
+  { src: icoLogo, alt: "Information Commissioner's Office — Registered", imgClass: "max-h-14" },
   {
-    src: proTrainingsLogo,
-    alt: "ProTrainings — Registered Trainers",
-    className: "max-h-16 max-w-full object-contain",
+    title: "ResusReady",
+    subtitle: "Membership RR-715313",
+    alt: "ResusReady — Member RR-715313",
   },
-  {
-    src: highfieldLogo,
-    alt: "Highfield — Registered Trainers",
-    className: "max-h-9 max-w-full object-contain",
-  },
-];
+] as const;
 
 const points = [
   {
@@ -112,44 +111,30 @@ export default function Foundations() {
           transition={{ duration: 0.5 }}
           className="mt-20 pt-12 border-t border-border/60"
         >
-          <h3 className="text-center text-sm font-semibold text-muted-foreground uppercase tracking-wider mb-8">
+          <h3 className="text-center text-sm font-semibold text-muted-foreground uppercase tracking-wider mb-10">
             Memberships &amp; Accreditations
           </h3>
-          <div className="flex flex-wrap items-center justify-center gap-4 md:gap-6">
-            {/* AoHT membership — official logo */}
-            <div className="bg-white rounded-xl border border-border shadow-sm p-4 flex items-center justify-center h-24 w-40">
-              <img
-                src={aohtLogo}
-                alt="Association of Healthcare Trainers — Member"
-                className="max-h-full max-w-full object-contain"
-              />
-            </div>
-
-            {/* ResusReady credential */}
-            <div className="bg-white rounded-xl border border-border shadow-sm p-4 flex flex-col items-center justify-center h-24 w-40 text-center">
-              <HeartPulse className="w-7 h-7 text-primary mb-1" />
-              <span className="text-sm font-bold text-foreground leading-tight">ResusReady</span>
-              <span className="text-[11px] text-muted-foreground mt-0.5">Membership RR-715313</span>
-            </div>
-
-            {/* Logo accreditations */}
-            {logoAccreditations.map((logo) => (
+          <div className="mx-auto flex max-w-4xl flex-wrap items-center justify-center gap-3 sm:gap-4">
+            {credentials.map((item) => (
               <div
-                key={logo.alt}
-                className="bg-white rounded-xl border border-border shadow-sm p-4 flex items-center justify-center h-24 w-40"
+                key={item.alt}
+                className="flex h-28 w-44 items-center justify-center rounded-2xl bg-white px-6 ring-1 ring-black/5 transition-shadow duration-300 hover:shadow-lg"
               >
-                <img src={logo.src} alt={logo.alt} className={logo.className} />
+                {"src" in item ? (
+                  <img
+                    src={item.src}
+                    alt={item.alt}
+                    className={`${item.imgClass} w-auto max-w-full object-contain`}
+                  />
+                ) : (
+                  <div className="flex flex-col items-center text-center">
+                    <HeartPulse className="mb-1.5 h-7 w-7 text-primary" />
+                    <span className="text-sm font-bold leading-tight text-foreground">{item.title}</span>
+                    <span className="mt-0.5 text-[11px] text-muted-foreground">{item.subtitle}</span>
+                  </div>
+                )}
               </div>
             ))}
-
-            {/* ICO registration — official logo */}
-            <div className="bg-white rounded-xl border border-border shadow-sm p-4 flex items-center justify-center h-24 w-40">
-              <img
-                src={icoLogo}
-                alt="Information Commissioner's Office — Registered"
-                className="max-h-16 max-w-full object-contain"
-              />
-            </div>
           </div>
         </motion.div>
       </div>
