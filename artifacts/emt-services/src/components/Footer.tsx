@@ -13,7 +13,7 @@ export default function Footer() {
             <img
               src={logoWordmark}
               alt="EMT Services"
-              className="h-12 w-auto mb-4"
+              className="h-16 w-auto mb-4"
               style={{ filter: "brightness(0) invert(1)" }}
             />
             <p className="mb-2">

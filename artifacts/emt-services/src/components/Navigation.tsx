@@ -55,7 +55,10 @@ export default function Navigation() {
               <img
                 src={logoWordmark}
                 alt="EMT Services"
-                className="h-12 w-auto"
+                className={cn(
+                  "w-auto transition-all duration-300",
+                  isScrolled ? "h-11" : "h-14"
+                )}
                 style={{ filter: "brightness(0) invert(1)" }}
               />
             </a>
