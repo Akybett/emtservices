@@ -34,10 +34,10 @@ title = "fire safety red hiviz event"
 id = "C2jbvju873a8c6mw3ryHh"
 uri = "file://attached_assets/generated_images/stewarding_card.png"
 type = "image"
-title = "Stewarding card image"
+title = "Stewarding card — cropped"
 
 [[outputs]]
 id = "zCQOsMNng_v94dTdY3Dsj"
 uri = "file://attached_assets/generated_images/fire_safety_card.png"
 type = "image"
-title = "Fire Safety card image (red hi-vis)"
+title = "Fire Safety card — cropped"
