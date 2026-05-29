@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { CheckCircle2, HeartPulse } from "lucide-react";
+import { CheckCircle2, HeartPulse, ShieldCheck } from "lucide-react";
 import bgImg from "@assets/PXL_20250822_173135757_1779997274807.jpg";
 import aohtLogo from "@assets/AoHT-Member-Logo_1780063205128.png";
 import proTrainingsLogo from "@assets/ProTrainings_Logo_-_stacked_(RGB)_1780063367815.png";
@@ -16,11 +16,6 @@ const logoAccreditations = [
     alt: "Highfield — Registered Trainers",
     className: "max-h-9 max-w-full object-contain",
   },
-];
-
-const accreditations = [
-  "NEBOSH Certified (Director Level)",
-  "ICO Registered",
 ];
 
 const points = [
@@ -146,15 +141,12 @@ export default function Foundations() {
               </div>
             ))}
 
-            {/* Text-based accreditations */}
-            {accreditations.map((item) => (
-              <div
-                key={item}
-                className="bg-white rounded-xl border border-border shadow-sm px-5 flex items-center justify-center h-24 w-40 text-center"
-              >
-                <span className="text-sm font-semibold text-foreground leading-snug">{item}</span>
-              </div>
-            ))}
+            {/* ICO registration */}
+            <div className="bg-white rounded-xl border border-border shadow-sm p-4 flex flex-col items-center justify-center h-24 w-40 text-center">
+              <ShieldCheck className="w-7 h-7 text-primary mb-1" />
+              <span className="text-sm font-bold text-foreground leading-tight">ICO Registered</span>
+              <span className="text-[11px] text-muted-foreground mt-0.5">Data Protection</span>
+            </div>
           </div>
         </motion.div>
       </div>
