@@ -133,7 +133,7 @@ export default function Contact() {
                       <FormItem>
                         <FormLabel>Full Name</FormLabel>
                         <FormControl>
-                          <Input placeholder="John Doe" {...field} />
+                          <Input placeholder="Your full name" {...field} />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
@@ -146,7 +146,7 @@ export default function Contact() {
                       <FormItem>
                         <FormLabel>Email Address</FormLabel>
                         <FormControl>
-                          <Input type="email" placeholder="john@example.com" {...field} />
+                          <Input type="email" placeholder="your@email.com" {...field} />
                         </FormControl>
                         <FormMessage />
                       </FormItem>

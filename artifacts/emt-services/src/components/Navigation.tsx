@@ -21,6 +21,7 @@ export default function Navigation() {
     { name: "Services", href: "#services" },
     { name: "Foundations", href: "#foundations" },
     { name: "Trust", href: "#trust" },
+    { name: "FAQ", href: "#faq" },
     { name: "Contact", href: "#contact" },
   ];
 

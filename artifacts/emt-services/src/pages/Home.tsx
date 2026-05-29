@@ -1,6 +1,7 @@
 import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
 import Services from "@/components/Services";
+import EventTypes from "@/components/EventTypes";
 import Foundations from "@/components/Foundations";
 import Trust from "@/components/Trust";
 import FAQ from "@/components/FAQ";
@@ -14,6 +15,7 @@ export default function Home() {
       <main className="flex-1">
         <Hero />
         <Services />
+        <EventTypes />
         <Foundations />
         <Trust />
         <FAQ />
