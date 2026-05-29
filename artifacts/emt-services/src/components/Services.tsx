@@ -3,6 +3,8 @@ import { ShieldCheck, HeartPulse, Users, Flame } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import securityImg from "@assets/690691086_122175045026935652_6242328256642375166_n_1780012979478.jpg";
 import medicalImg from "@assets/ReLens_Image_2024-09-07_12_55_36_1999x1953~2_1780012979478.jpg";
+import stewardingImg from "@assets/generated_images/stewarding_card.png";
+import fireSafetyImg from "@assets/generated_images/fire_safety_card.png";
 
 const services = [
   {
@@ -23,15 +25,15 @@ const services = [
     title: "Professional Stewarding",
     description: "We bring in specialist stewards for each event rather than maintaining a permanent roster. This keeps us flexible and ensures the right personnel are matched to the right event. Our stewards come to us through personal recommendation and are vetted directly — not sourced from an agency pool.",
     icon: Users,
-    image: null,
-    imageAlt: "",
+    image: stewardingImg,
+    imageAlt: "Event steward in high visibility vest managing crowd at an outdoor festival",
   },
   {
     title: "Fire Safety Operations",
     description: "Fire safety planning and on-site compliance, structured in accordance with current legislation and industry guidance. Andy holds a NEBOSH certification — a gold-standard credential in occupational health, safety, and risk management — ensuring director-level qualification is applied to every event we cover.",
     icon: Flame,
-    image: null,
-    imageAlt: "",
+    image: fireSafetyImg,
+    imageAlt: "EMT Services fire safety operative in red high visibility vest at an outdoor event",
   }
 ];
 
