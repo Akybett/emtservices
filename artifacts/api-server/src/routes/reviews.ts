@@ -1,4 +1,4 @@
-import { Router, type IRouter } from "express";
+import { Router, type IRouter, type Request, type Response } from "express";
 
 const router: IRouter = Router();
 
@@ -61,7 +61,7 @@ async function fetchFromGoogle(placeId: string, apiKey: string): Promise<Reviews
   };
 }
 
-router.get("/reviews", async (req, res) => {
+router.get("/reviews", async (req: Request, res: Response) => {
   const apiKey = process.env.GOOGLE_PLACES_API_KEY;
   const placeId = process.env.GOOGLE_PLACE_ID;
 
