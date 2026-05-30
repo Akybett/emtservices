@@ -1,4 +1,4 @@
-import { Router, type IRouter } from "express";
+import { Router, type IRouter, type Request, type Response } from "express";
 // Gmail integration via Replit connector (google-mail).
 // Sends contact-form enquiries straight to the company inbox.
 import { ReplitConnectors } from "@replit/connectors-sdk";
@@ -131,7 +131,7 @@ function buildRawMessage(opts: {
     .replace(/=+$/, "");
 }
 
-router.post("/contact", async (req, res) => {
+router.post("/contact", async (req: Request, res: Response) => {
   // Honeypot: bots fill this hidden field, humans don't
   if (req.body?.website) {
     req.log.warn("Honeypot triggered — likely spam submission");
